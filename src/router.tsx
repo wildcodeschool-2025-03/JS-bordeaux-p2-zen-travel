@@ -1,9 +1,7 @@
 import { createBrowserRouter } from "react-router";
-import Home from "../src/pages/Home/Home";
 import App from "./App";
+import Home from "./pages/Home/Home";
 import InteractiveMap from "./pages/InteractiveMap/InteractiveMap";
-import ModalChecklist from "./pages/ModalChecklist/ModalChecklist";
-import ModalInfo from "./pages/ModalInfo/ModalInfo";
 
 const router = createBrowserRouter([
 	{
@@ -16,18 +14,6 @@ const router = createBrowserRouter([
 			{
 				path: "interactive-map",
 				element: <InteractiveMap />,
-				children: [
-					{
-						path: "modal-info",
-						element: <ModalInfo />,
-						children: [
-							{
-								path: "modal-checklist",
-								element: <ModalChecklist />,
-							},
-						],
-					},
-				],
 			},
 		],
 	},
