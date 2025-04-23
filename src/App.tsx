@@ -13,7 +13,7 @@ function App() {
 				<Outlet />
 			</main>
 
-			<footer>&copy; Copyright 2025 by ITM</footer>
+			<footer>&copy; Copyright 2025 by ITM.</footer>
 		</>
 	);
 }
