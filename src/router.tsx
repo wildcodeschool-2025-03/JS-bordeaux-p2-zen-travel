@@ -12,7 +12,7 @@ const router = createBrowserRouter([
 				element: <Home />,
 			},
 			{
-				path: "interactive-map",
+				path: "/interactive-map",
 				element: <InteractiveMap />,
 			},
 		],
