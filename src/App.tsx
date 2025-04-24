@@ -1,6 +1,6 @@
 import "./App.css";
-import MainCard from "./components/MainCard";
 import { useEffect, useState } from "react";
+import MainCard from "./components/MainCard";
 
 function App() {
 	const [country, setCountry] = useState(null);
