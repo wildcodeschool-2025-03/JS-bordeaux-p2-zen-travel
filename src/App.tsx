@@ -1,7 +1,7 @@
 import { Link, Outlet } from "react-router";
 import "./App.css";
-import "./ModalChecklist";
-import ModalChecklist from "./ModalChecklist";
+import "./components/ModalChecklist/ModalChecklist";
+import ModalChecklist from "./components/ModalChecklist/ModalChecklist";
 
 function App() {
 	return (
