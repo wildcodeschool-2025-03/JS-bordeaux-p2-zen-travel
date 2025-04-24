@@ -1,11 +1,11 @@
 import "./App.css";
+import "./ModalChecklist";
+import ModalChecklist from "./ModalChecklist";
 
 function App() {
-	const name = "toto";
-	const text = "Welcome";
 	return (
 		<>
-			{text} {name}
+			<ModalChecklist />
 		</>
 	);
 }
