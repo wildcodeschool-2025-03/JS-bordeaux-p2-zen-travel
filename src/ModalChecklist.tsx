@@ -12,12 +12,13 @@ function ModalChecklist() {
 
 	return (
 		<>
-			{countriesName.map((country, index) => (
-				<h1 key={index}>
-					🎒 Préparer votre voyage pour {country.name?.common}
+			{countriesName.length > 18 ? (
+				<h1>
+					🎒 Préparer votre voyage pour le {countriesName[18].name.common}
 				</h1>
-			))}
-			;
+			) : (
+				<h1>Chargement du pays...</h1>
+			)}
 		</>
 	);
 }
