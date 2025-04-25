@@ -1,0 +1,52 @@
+.modalChecklist {
+	height: 70%;
+	width: 70%;
+	background: linear-gradient(
+		to bottom,
+		var(--main-color-modal),
+		var(--secondary-color-modal)
+	);
+	margin: auto;
+	border-radius: 25px;
+	padding: 50px 0px 50px 0px;
+	box-shadow: 30px 30px 15px var(--color-text-modal);
+}
+
+h1 {
+	color: var(--color-text-modal);
+	font-weight: bolder;
+}
+
+ul {
+	list-style-type: none;
+}
+
+li {
+	padding: 10px 0px 10px 0px;
+	color: var(--color-text-modal);
+	font-weight: bold;
+}
+
+label {
+	display: flex;
+	align-items: center;
+	gap: 70px;
+	margin-left: 30vh;
+}
+
+input {
+	height: 20px;
+	width: 20px;
+	box-shadow: 4px 4px 4px var(--color-text-modal);
+}
+
+button {
+	height: 50px;
+	width: 200px;
+	border-radius: 20px;
+	box-shadow: 4px 4px 4px var(--color-btn-modalmodal);
+	background-color: var(--color-text-modal);
+	color: var(--color-btn-modal);
+	font-weight: bolder;
+	margin: 20px 50px 20px 20px;
+}
