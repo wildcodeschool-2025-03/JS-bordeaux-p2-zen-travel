@@ -12,6 +12,21 @@
 	box-shadow: 30px 30px 15px var(--color-text-modal);
 }
 
+#closeBtn {
+	height: 25px;
+	width: 25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 25px;
+	margin-left: 90%;
+	color: var(--color-text-modal);
+	border-color: var(--color-btn-modal);
+	box-shadow: 5px 5px 5px var(--color-text-modal);
+	border-radius: 5px;
+	border-color: var(--color-text-modal);
+}
+
 h1 {
 	color: var(--color-text-modal);
 	font-weight: bolder;
@@ -37,14 +52,14 @@ label {
 input {
 	height: 20px;
 	width: 20px;
-	box-shadow: 4px 4px 4px var(--color-text-modal);
+	box-shadow: 5px 5px 5px var(--color-text-modal);
 }
 
-button {
+#printBtn {
 	height: 50px;
 	width: 200px;
 	border-radius: 20px;
-	box-shadow: 4px 4px 4px var(--color-btn-modalmodal);
+	box-shadow: 4px 4px 4px var(--color-text-modal);
 	background-color: var(--color-text-modal);
 	color: var(--color-btn-modal);
 	font-weight: bolder;
