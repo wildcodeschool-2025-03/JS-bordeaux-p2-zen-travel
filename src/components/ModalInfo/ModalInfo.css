@@ -1,0 +1,75 @@
+.ModalInfo {
+	background: linear-gradient(to bottom, rgb(66, 140, 149), white);
+	margin: auto;
+	width: 800px;
+	height: 60vh;
+	border-radius: 10px;
+	border: solid rgb(66, 140, 149);
+	box-shadow: 20px 20px 20px 0 rgb(66, 140, 149, 0.6);
+	padding: 20px;
+	position: relative;
+}
+
+.flagCountries {
+	border-radius: 10px;
+}
+
+.close-button {
+	position: absolute;
+	background-color: white;
+	font-weight: bold;
+	right: 10px;
+	top: 10px;
+}
+
+.navbar {
+	display: inline-block;
+	display: flex;
+	justify-content: space-evenly;
+	height: 40px;
+}
+section nav {
+	background-color: rgb(66, 140, 149);
+	padding: 10px;
+	margin: 10px;
+}
+
+nav button {
+	background: none;
+	border: none;
+	color: white;
+	font-size: large;
+}
+nav button:hover {
+	border-bottom: 3px solid white;
+}
+
+.ModalInfo h2,
+p {
+	color: rgb(66, 140, 149);
+}
+
+.PackTaValise {
+	background-color: rgb(66, 140, 149);
+	width: 70%;
+	height: 40px;
+	border-radius: 15px;
+	margin: auto;
+}
+
+.PackTaValise button {
+	background: none;
+	border: none;
+	color: white;
+	font-size: large;
+	padding: 9px;
+}
+
+@media (max-width: 600px) {
+	.menue-onglets {
+		display: none;
+	}
+	.PackTaValise {
+		width: 40%;
+	}
+}

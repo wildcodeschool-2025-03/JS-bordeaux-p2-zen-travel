@@ -1,0 +1,14 @@
+:root {
+	--main-color-modal: #4698a1;
+	--secondary-color-modal: #fff;
+	--color-text-modal: #4698a1;
+	--color-btn-modal: #fff;
+
+	--font-family-title-home: "special Elite";
+	--font-family-modal: "Inter";
+
+	--font-size-title-home: 2rem;
+	--font-size-navbar-modal: 1.8rem;
+	--font-size-btn-title-modal: 2rem;
+	--font-size-paragraphe-modal: 1.2rem;
+}
