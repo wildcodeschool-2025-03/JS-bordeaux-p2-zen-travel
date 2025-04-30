@@ -43,22 +43,22 @@ function ModalInfo() {
 
 						<nav className="navbar">
 							<button type="button" onClick={() => setActivTab("Infos")}>
-								<strong>Infos</strong>
+								Infos
 							</button>
 							<button type="button" onClick={() => setActivTab("Gastronomie")}>
-								<strong>Gastronomie</strong>
+								Gastronomie
 							</button>
 							<button type="button" onClick={() => setActivTab("Climat")}>
-								<strong>Climat</strong>
+								Climat
 							</button>
 							<button type="button" onClick={() => setActivTab("Tips")}>
-								<strong>Tips</strong>
+								Tips
 							</button>
 							<button
 								type="button"
 								onClick={() => setActivTab("Lieux à visiter")}
 							>
-								<strong>Lieux à visiter</strong>
+								Lieux à visiter
 							</button>
 						</nav>
 
@@ -66,18 +66,11 @@ function ModalInfo() {
 							{activTab === "Infos" && (
 								<>
 									<h2>{country.translations.fra.common}</h2>
+									<p>Capital: {country.capital?.[0]}</p>
+									<p>Region: {country.region}</p>
+									<p>Population: {country.population.toLocaleString()}</p>
 									<p>
-										<strong>Capital:</strong> {country.capital?.[0]}
-									</p>
-									<p>
-										<strong>Region:</strong> {country.region}
-									</p>
-									<p>
-										<strong>Population:</strong>{" "}
-										{country.population.toLocaleString()}
-									</p>
-									<p>
-										<strong>Langue : </strong>
+										Langue :
 										{country.languages &&
 											Object.values(country.languages).join(" , ")}
 									</p>

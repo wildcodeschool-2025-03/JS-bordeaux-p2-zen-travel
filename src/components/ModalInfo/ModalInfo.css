@@ -39,6 +39,7 @@ nav button {
 	border: none;
 	color: white;
 	font-size: large;
+	font-weight: bold;
 }
 nav button:hover {
 	border-bottom: 3px solid white;
@@ -63,6 +64,9 @@ p {
 	color: white;
 	font-size: large;
 	padding: 9px;
+}
+.modal-content {
+	font-weight: bold;
 }
 
 @media (max-width: 600px) {
