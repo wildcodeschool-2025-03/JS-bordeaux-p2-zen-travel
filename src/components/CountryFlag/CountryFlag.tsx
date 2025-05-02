@@ -16,7 +16,6 @@ function CountryFlag() {
 	}
 
 	const country = flags[0];
-	console.log(country);
 
 	return (
 		<>

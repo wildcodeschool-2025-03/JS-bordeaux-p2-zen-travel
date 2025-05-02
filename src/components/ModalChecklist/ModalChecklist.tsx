@@ -4,7 +4,6 @@ import CountryFlag from "../CountryFlag/CountryFlag";
 
 function ModalChecklist() {
 	const [countriesInfo, setCountriesInfo] = useState([]);
-	const [checkedBtn, setCheckedBtn] = useState(false);
 
 	useEffect(() => {
 		fetch(
@@ -24,96 +23,71 @@ function ModalChecklist() {
 	}
 	const country = countriesInfo.countries[1];
 
-	function checked() {
-		setCheckedBtn(!checkedBtn);
-	}
+	const items = [
+		{
+			id: 1,
+			name: "Passeport en cours de validité",
+			status: false,
+		},
+		{
+			id: 2,
+			name: `Visa : ${country.visa}`,
+			status: false,
+		},
+		{
+			id: 3,
+			name: `Vaccins nécessaires : ${country.vaccines}`,
+			status: false,
+		},
+		{
+			id: 4,
+			name: `Prévoir de la monnaie en ${country.currency}`,
+			status: false,
+		},
+		{
+			id: 5,
+			name: `Adaptateur de prise électrique : ${country.plug}`,
+			status: false,
+		},
+		{
+			id: 6,
+			name: `Traducteur de langue en ${country.language}`,
+			status: false,
+		},
+		{
+			id: 7,
+			name: `Numéros d'urgence pour la Police ${country.emergency.police} /
+			Ambulance ${country.emergency.ambulance} / Pompiers ${country.emergency.pompiers}`,
+			status: false,
+		},
+	];
 
 	return (
 		<>
-			<div className="modalChecklist">
-				<button type="button" id="closeBtn" onClick={() => {}}>
+			<div className="modal-checklist">
+				<button type="button" id="close-btn">
 					X
 				</button>
 				<CountryFlag />
 				<h1>🎒 Préparer votre voyage pour la {country.country}</h1>
 				<ul>
-					<li>
-						<label>
-							<input type="checkbox" onClick={checked} />
-							<span
-								style={
-									checkedBtn
-										? { textDecoration: "line-through", color: "#2c7a83" }
-										: {}
-								}
-							>
-								Passeport en cours de validité
-							</span>
-						</label>
-					</li>
-					<li>
-						<label>
-							<input type="checkbox" onClick={checked} />
-							<span
-								style={
-									checkedBtn
-										? { textDecoration: "line-through", color: "#2c7a83" }
-										: {}
-								}
-							>
-								Visa : {country.visa}
-							</span>
-						</label>
-					</li>
-					<li>
-						<label>
-							<input type="checkbox" onClick={checked} />
-							<span
-								style={
-									checkedBtn
-										? { textDecoration: "line-through", color: "#2c7a83" }
-										: {}
-								}
-							>
-								Vaccins nécessaires : {country.vaccines}
-							</span>
-						</label>
-					</li>
-					<li>
-						<label>
-							<input type="checkbox" />
-							Prévoir de la monnaie en {country.currency}
-						</label>
-					</li>
-					<li>
-						<label>
-							<input type="checkbox" />
-							Adaptateur de prise électrique : {country.plug}
-						</label>
-					</li>
-					<li>
-						<label>
-							<input type="checkbox" />
-							Traducteur de langue en {country.language}
-						</label>
-					</li>
-					<li>
-						<label>
-							<input type="checkbox" />
-							Numéros d'urgence pour la Police {country.emergency.police} /
-							Ambulance {country.emergency.ambulance} / Pompiers{" "}
-							{country.emergency.pompiers}
-						</label>
-					</li>
+					{items.map((item) => (
+						<li key={item.id}>
+							<label htmlFor={`item-${item.id}`}>
+								<input type="checkbox" id={`item-${item.id}`} />
+								<span>{item.name}</span>
+							</label>
+						</li>
+					))}
 				</ul>
 				<button
 					type="button"
-					id="printBtn"
+					id="print-btn"
 					onClick={() => {
 						window.print();
 					}}
 				>
-					Imprimer ma checklist
+					Imprimer ma check-list
 				</button>
 			</div>
 		</>

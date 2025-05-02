@@ -6,7 +6,6 @@ import ModalChecklist from "./components/ModalChecklist/ModalChecklist";
 function App() {
 	return (
 		<>
-			<ModalChecklist />
 			<nav>
 				<Link to="/">Page d'accueil</Link>
 				<Link to="/interactive-map">Carte interactive</Link>
@@ -14,6 +13,7 @@ function App() {
 
 			<main>
 				<Outlet />
+				<ModalChecklist />
 			</main>
 
 			<footer>&copy; Copyright 2025 by ITM.</footer>
