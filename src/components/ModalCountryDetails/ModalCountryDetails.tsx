@@ -1,11 +1,11 @@
-import "./ModalInfo.css";
+import "./ModalCountryDetails.css";
 import { useEffect, useState } from "react";
-import ModalClimat from "../ModalClimat/ModalClimat";
-import ModalGastronomie from "../ModalGastronomie/ModalGastronomie";
-import ModalPlaces from "../ModalPlaces/ModalPlaces";
-import ModalTips from "../ModalTips/ModalTips";
+import Climat from "./Climat/Climat";
+import Gastronomy from "./Gastronomy/Gastronomy";
+import Places from "./Places/Places";
+import Tips from "./Tips/Tips";
 
-interface ModalInfoProps {
+interface CountryInterface {
 	flags: Record<string, string>;
 	translations: Record<string, { common: string }>;
 	capital: string;
@@ -14,8 +14,8 @@ interface ModalInfoProps {
 	languages: string;
 }
 
-function ModalInfo() {
-	const [country, setCountry] = useState<ModalInfoProps | null>(null);
+function ModalCountryDetails() {
+	const [country, setCountry] = useState<CountryInterface | null>(null);
 	const [activTab, setActivTab] = useState("Infos");
 
 	useEffect(() => {
@@ -26,15 +26,14 @@ function ModalInfo() {
 	}, []);
 
 	return (
-		<section className="ModalInfo">
+		<section className="info">
 			<div>
 				{country ? (
 					<div>
 						<img
-							className="flagCountries"
+							className="flag-countries"
 							src={country.flags.png}
 							alt="countryFlag"
-							width="150"
 						/>
 
 						<button type="button" className="close-button">
@@ -77,13 +76,13 @@ function ModalInfo() {
 								</>
 							)}
 
-							{activTab === "Gastronomie" && <ModalGastronomie />}
+							{activTab === "Gastronomie" && <Gastronomy />}
 
-							{activTab === "Climat" && <ModalClimat />}
+							{activTab === "Climat" && <Climat />}
 
-							{activTab === "Tips" && <ModalTips />}
+							{activTab === "Tips" && <Tips />}
 
-							{activTab === "Lieux à visiter" && <ModalPlaces />}
+							{activTab === "Lieux à visiter" && <Places />}
 						</div>
 					</div>
 				) : (
@@ -91,11 +90,11 @@ function ModalInfo() {
 				)}
 			</div>
 
-			<section className="PackTaValise">
+			<section className="pack-your-bag">
 				<button type="button">Pack ta valise</button>
 			</section>
 		</section>
 	);
 }
 
-export default ModalInfo;
+export default ModalCountryDetails;
