@@ -1,0 +1,54 @@
+.gastronomy-body {
+	background: linear-gradient(to bottom, rgb(66, 140, 149, 0.7), white);
+	margin: auto;
+	width: 800px;
+	padding: 20px 5px 0px 5px;
+}
+
+.dishes {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: space-around;
+	margin-top: 25px;
+	gap: 10px;
+}
+
+.dish-card {
+	width: 250px;
+	height: 300px;
+	margin: auto;
+	border: 1px solid var(--main-color-modal);
+	border-radius: 20px;
+	box-shadow: 5px 5px 5px var(--main-color-modal);
+}
+
+article h1 {
+	width: 280px;
+	margin: auto;
+	background: var(--main-color-modal);
+	font-family: var(--font-family-title-home);
+	color: var(--secondary-color-modal);
+	padding: 5px 5px 5px 5px;
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px var(--main-color-modal);
+}
+
+article img {
+	padding-top: 10px;
+	width: 180px;
+	height: 120px;
+}
+
+article h2 {
+	font-family: var(--font-family-modal);
+	color: var(--color-text-modal);
+}
+
+article p {
+	font-family: var(--font-family-modal);
+	color: var(--color-text-modal);
+	width: 180px;
+	margin: auto;
+	padding-bottom: 20px;
+}
