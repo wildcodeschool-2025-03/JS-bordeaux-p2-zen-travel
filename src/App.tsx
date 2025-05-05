@@ -1,7 +1,7 @@
 import { Link, Outlet } from "react-router";
 import "./App.css";
-import "./components/ModalChecklist/ModalChecklist";
-import ModalChecklist from "./components/ModalChecklist/ModalChecklist";
+import "./components/Checklist/Checklist";
+import Checklist from "./components/Checklist/Checklist";
 
 function App() {
 	return (
@@ -13,7 +13,7 @@ function App() {
 
 			<main>
 				<Outlet />
-				<ModalChecklist />
+				<Checklist />
 			</main>
 
 			<footer>&copy; Copyright 2025 by ITM.</footer>

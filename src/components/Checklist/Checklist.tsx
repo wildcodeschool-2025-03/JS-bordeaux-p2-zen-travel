@@ -1,8 +1,8 @@
-import "./ModalChecklist.css";
+import "./Checklist.css";
 import { useEffect, useState } from "react";
 import CountryFlag from "../CountryFlag/CountryFlag";
 
-function ModalChecklist() {
+function Checklist() {
 	const [countriesInfo, setCountriesInfo] = useState([]);
 
 	useEffect(() => {
@@ -69,7 +69,11 @@ function ModalChecklist() {
 					X
 				</button>
 				<CountryFlag />
-				<h1>🎒 Préparer votre voyage pour la {country.country}</h1>
+				<div className="typewriter-container">
+					<div className="typewriter">
+						<h1>🎒 Préparer votre séjour en/au(x) {country.country}</h1>
+					</div>
+				</div>
 				<ul>
 					{items.map((item) => (
 						<li key={item.id}>
@@ -94,4 +98,4 @@ function ModalChecklist() {
 	);
 }
 
-export default ModalChecklist;
+export default Checklist;
