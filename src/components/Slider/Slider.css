@@ -1,10 +1,3 @@
-.gastronomy-body {
-	background: linear-gradient(to bottom, rgb(66, 140, 149, 0.7), white);
-	margin: auto;
-	width: 80%;
-	padding: 20px 5px 0px 5px;
-}
-
 .dishes {
 	display: flex;
 	flex-wrap: wrap;
@@ -14,17 +7,17 @@
 	gap: 10px;
 }
 
-.dish-card {
+.dish-card-slider {
 	width: 250px;
-	height: 300px;
+	height: 320px;
 	margin: auto;
 	border: 1px solid var(--main-color-modal);
 	border-radius: 20px;
-	box-shadow: 5px 5px 5px var(--main-color-modal);
+	box-shadow: 5px 0px 5px var(--main-color-modal);
 }
 
 article h1 {
-	width: 300px;
+	width: 200px;
 	margin: auto;
 	background: linear-gradient(to bottom, rgb(66, 140, 149, 0.4), white);
 	font-family: var(--font-family-title-home);
@@ -32,12 +25,6 @@ article h1 {
 	padding: 5px 5px 5px 5px;
 	border-radius: 10px;
 	box-shadow: 5px 5px 5px var(--main-color-modal);
-}
-
-article img {
-	padding-top: 10px;
-	width: 180px;
-	height: 120px;
 }
 
 article h2 {
@@ -53,17 +40,25 @@ article p {
 	padding-bottom: 20px;
 }
 
-@media screen and (max-width: 768px) {
-	.gastronomy-body {
-		width: 100%;
+.carousel #dish-undefined {
+	width: 180px;
+	height: 120px;
+}
+
+.carousel-status {
+	display: none;
+}
+
+.carousel .thumbs-wrapper {
+	display: none;
+}
+
+@media screen and (min-width: 768px) {
+	.carousel {
+		display: none;
 	}
 
 	article h1 {
-		font-size: 1.6rem;
-	}
-
-	.dishes,
-	.dish-card {
-		display: none;
+		width: 300px;
 	}
 }

@@ -1,5 +1,6 @@
 import { Link, Outlet } from "react-router";
 import "./App.css";
+import Gastronomy from "./components/Gastronomy/Gastronomy";
 
 function App() {
 	return (
@@ -11,6 +12,7 @@ function App() {
 
 			<main>
 				<Outlet />
+				<Gastronomy />
 			</main>
 
 			<footer>&copy; Copyright 2025 by ITM.</footer>

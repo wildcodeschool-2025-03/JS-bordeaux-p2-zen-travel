@@ -1,9 +1,9 @@
-import "./Gastronomy.css";
-import "../Slider/Slider.css";
-import Slider from "../Slider/Slider.tsx";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
+import "./Slider.css";
 import { useEffect, useState } from "react";
 
-function Gastronomy() {
+function Slider() {
 	const [countriesInfo, setCountriesInfo] = useState([]);
 
 	useEffect(() => {
@@ -23,26 +23,21 @@ function Gastronomy() {
 		return <h1>Chargement du pays...</h1>;
 	}
 	const country = countriesInfo.countries[0];
-
 	return (
-		<article className="gastronomy-body">
-			<h1>Plats Typiques</h1>
-			<Slider />
-			<div className="dishes">
-				{country.typical_dishes.slice(0, 3).map((dish) => (
-					<div key={dish.id} className="dish-card">
-						<img
-							src={`src/img/${dish.picture}`}
-							alt="typical-dish-picture"
-							id={`dish-${dish.id}`}
-						/>
-						<h2>{dish.name}</h2>
-						<p>{dish.description}</p>
-					</div>
-				))}
-			</div>
-		</article>
+		<Carousel className="dishes" autoPlay interval={5000} infiniteLoop>
+			{country.typical_dishes.slice(0, 3).map((dish) => (
+				<div key={dish.id} className="dish-card-slider">
+					<img
+						src={`src/img/${dish.picture}`}
+						alt="typical-dish-picture"
+						id={`dish-${dish.id}`}
+					/>
+					<h2>{dish.name}</h2>
+					<p>{dish.description}</p>
+				</div>
+			))}
+		</Carousel>
 	);
 }
 
-export default Gastronomy;
+export default Slider;
