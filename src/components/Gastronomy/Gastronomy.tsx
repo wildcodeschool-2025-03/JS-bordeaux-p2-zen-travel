@@ -1,7 +1,7 @@
 import "./Gastronomy.css";
 import "../Slider/Slider.css";
-import Slider from "../Slider/Slider.tsx";
 import { useEffect, useState } from "react";
+import Slider from "../Slider/Slider.tsx";
 
 function Gastronomy() {
 	const [countriesInfo, setCountriesInfo] = useState([]);
