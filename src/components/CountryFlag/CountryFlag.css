@@ -3,3 +3,9 @@ img {
 	border-radius: 10px;
 	box-shadow: 5px 5px 5px var(--color-text-modal);
 }
+
+@media screen and (max-width: 768px) {
+	img {
+		width: 180px;
+	}
+}

@@ -27,51 +27,44 @@ function Checklist() {
 		{
 			id: 1,
 			name: "Passeport en cours de validité",
-			status: false,
 		},
 		{
 			id: 2,
 			name: `Visa : ${country.visa}`,
-			status: false,
 		},
 		{
 			id: 3,
 			name: `Vaccins nécessaires : ${country.vaccines}`,
-			status: false,
 		},
 		{
 			id: 4,
 			name: `Prévoir de la monnaie en ${country.currency}`,
-			status: false,
 		},
 		{
 			id: 5,
 			name: `Adaptateur de prise électrique : ${country.plug}`,
-			status: false,
 		},
 		{
 			id: 6,
 			name: `Traducteur de langue en ${country.language}`,
-			status: false,
 		},
 		{
 			id: 7,
 			name: `Numéros d'urgence pour la Police ${country.emergency.police} /
 			Ambulance ${country.emergency.ambulance} / Pompiers ${country.emergency.pompiers}`,
-			status: false,
 		},
 	];
 
 	return (
 		<>
-			<div className="modal-checklist">
+			<article className="modal-checklist">
 				<button type="button" id="close-btn">
 					X
 				</button>
 				<CountryFlag />
 				<div className="typewriter-container">
 					<div className="typewriter">
-						<h1>🎒 Préparer votre séjour en/au(x) {country.country}</h1>
+						<h1>🎒 Préparer votre séjour : {country.country}</h1>
 					</div>
 				</div>
 				<ul>
@@ -93,7 +86,7 @@ function Checklist() {
 				>
 					Imprimer ma check-list
 				</button>
-			</div>
+			</article>
 		</>
 	);
 }
