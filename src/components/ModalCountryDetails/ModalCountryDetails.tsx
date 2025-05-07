@@ -5,6 +5,11 @@ import Gastronomy from "./Gastronomy/Gastronomy";
 import Places from "./Places/Places";
 import Tips from "./Tips/Tips";
 
+interface ModalCountryDetailsProps {
+	countryCode: string;
+	onClose: () => void;
+}
+
 interface CountryInterface {
 	flags: Record<string, string>;
 	translations: Record<string, { common: string }>;
@@ -14,16 +19,19 @@ interface CountryInterface {
 	languages: string;
 }
 
-function ModalCountryDetails() {
+function ModalCountryDetails({
+	countryCode,
+	onClose,
+}: ModalCountryDetailsProps) {
 	const [country, setCountry] = useState<CountryInterface | null>(null);
 	const [activTab, setActivTab] = useState("Infos");
 
 	useEffect(() => {
-		fetch("https://restcountries.com/v3.1/all")
+		fetch(`https://restcountries.com/v3.1/alpha/${countryCode}`)
 			.then((response) => response.json())
-			.then((data) => setCountry(data[56]))
+			.then((data) => setCountry(data[0]))
 			.catch((err) => console.error(err));
-	}, []);
+	}, [countryCode]);
 
 	return (
 		<section className="info">
@@ -36,7 +44,7 @@ function ModalCountryDetails() {
 							alt="countryFlag"
 						/>
 
-						<button type="button" className="close-button">
+						<button type="button" className="close-button" onClick={onClose}>
 							X
 						</button>
 

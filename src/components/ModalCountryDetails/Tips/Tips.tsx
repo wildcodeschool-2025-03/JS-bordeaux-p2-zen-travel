@@ -2,11 +2,9 @@ import "./Tips.css";
 
 function Tips() {
 	return (
-		<>
-			<h1>
-				<p>Tips</p>
-			</h1>
-		</>
+		<h1>
+			<p>Tips</p>
+		</h1>
 	);
 }
 

@@ -2,11 +2,9 @@ import "./Climat.css";
 
 function Climat() {
 	return (
-		<>
-			<h1>
-				<p>Climat</p>
-			</h1>
-		</>
+		<h1>
+			<p>Climat</p>
+		</h1>
 	);
 }
 

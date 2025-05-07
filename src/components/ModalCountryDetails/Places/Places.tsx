@@ -12,9 +12,9 @@ function Places() {
 	}, []);
 
 	return (
-		<>
-			<h1>Lieux à visiter</h1>
-		</>
+		<h1>
+			<p>Lieux à visiter</p>
+		</h1>
 	);
 }
 

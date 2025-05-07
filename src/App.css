@@ -1,5 +1,54 @@
+@import "./assets/css/_variables.css";
+
+html,
 body {
-	margin: 0 auto;
-	padding: 2rem;
+	height: 100vh;
+	margin: 0;
+	font-family: var(--font-family-modal);
+}
+
+body {
 	text-align: center;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+}
+
+header {
+	height: 7vh;
+}
+
+main {
+	height: 80vh;
+}
+footer {
+	height: 7vh;
+}
+
+header .header-navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 30px;
+}
+
+header .header-navbar .logo img {
+	width: 70%;
+	height: 70%;
+	filter: brightness(0.6);
+	background-color: transparent;
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+
+header .header-navbar ul {
+	display: flex;
+	gap: 50px;
+	font-size: 1.3rem;
 }

@@ -1,0 +1,13 @@
+.map-btn {
+	background-color: rgb(47, 129, 172);
+	padding: 15px 40px;
+	border-radius: 20px;
+	width: 20%;
+	margin: auto;
+	font-size: 1.5rem;
+	color: rgba(0, 0, 0, 0.568);
+}
+
+.map-btn a {
+	color: black;
+}
