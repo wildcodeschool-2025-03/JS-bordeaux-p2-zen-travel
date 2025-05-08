@@ -11,11 +11,7 @@ function Places() {
 			.catch((err) => console.error(err));
 	}, []);
 
-	return (
-		<h1>
-			<p>Lieux à visiter</p>
-		</h1>
-	);
+	return <h1>Lieux à visiter</h1>;
 }
 
 export default Places;

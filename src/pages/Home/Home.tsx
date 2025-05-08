@@ -6,9 +6,10 @@ function Home() {
 		<div>
 			<h1>Bienvenue sur Zen Travel by ITM</h1>
 			<p>Explorez différents pays et préparez votre voyage !</p>
-			<button type="button" className="map-btn">
-				<Link to="/interactive-map">Carte interactive</Link>
-			</button>
+
+			<Link to="/interactive-map" className="map-btn">
+				Carte interactive
+			</Link>
 		</div>
 	);
 }
