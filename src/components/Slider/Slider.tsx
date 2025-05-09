@@ -3,8 +3,25 @@ import { Carousel } from "react-responsive-carousel";
 import "./Slider.css";
 import { useEffect, useState } from "react";
 
+interface DishInterface {
+	id: string;
+	name: string;
+	description: string;
+	picture: string;
+}
+
+interface CountryInterface {
+	country: string;
+	typical_dishes: DishInterface[];
+}
+
+interface CountriesInfoInterface {
+	countries: CountryInterface[];
+}
+
 function Slider() {
-	const [countriesInfo, setCountriesInfo] = useState([]);
+	const [countriesInfo, setCountriesInfo] =
+		useState<CountriesInfoInterface | null>(null);
 
 	useEffect(() => {
 		fetch(

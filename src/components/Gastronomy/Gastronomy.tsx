@@ -3,8 +3,25 @@ import "../Slider/Slider.css";
 import { useEffect, useState } from "react";
 import Slider from "../Slider/Slider.tsx";
 
+interface DishInterface {
+	id: string;
+	name: string;
+	description: string;
+	picture: string;
+}
+
+interface CountryInterface {
+	country: string;
+	typical_dishes: DishInterface[];
+}
+
+interface CountriesInfoInterface {
+	countries: CountryInterface[];
+}
+
 function Gastronomy() {
-	const [countriesInfo, setCountriesInfo] = useState([]);
+	const [countriesInfo, setCountriesInfo] =
+		useState<CountriesInfoInterface | null>(null);
 
 	useEffect(() => {
 		fetch(
