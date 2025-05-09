@@ -1,8 +1,13 @@
 import "./CountryFlag.css";
 import { useEffect, useState } from "react";
 
+interface CountryFlagInterface {
+	flags: Record<string, string>;
+	translations: Record<string, { common: string }>;
+}
+
 function CountryFlag() {
-	const [flags, setFlags] = useState([]);
+	const [flags, setFlags] = useState<CountryFlagInterface[]>([]);
 
 	useEffect(() => {
 		fetch("https://restcountries.com/v3.1/alpha/FR")

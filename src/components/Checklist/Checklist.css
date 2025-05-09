@@ -5,7 +5,7 @@
 	opacity: 0.8;
 	margin: auto;
 	border-radius: 25px;
-	padding: 50px 15px 50px 15px;
+	padding: 40px 15px 40px 15px;
 	box-shadow: 30px 30px 15px var(--color-text-modal);
 }
 
@@ -23,6 +23,12 @@
 	border-radius: 25px;
 	border-color: var(--color-text-modal);
 	cursor: pointer;
+}
+
+article h1 {
+	color: var(--color-text-modal);
+	font-family: var(--font-family-title-home);
+	font-size: var(--font-size-navbar-modal);
 }
 
 .typewriter-container {
@@ -71,56 +77,31 @@
 	}
 }
 
-h1 {
-	color: var(--color-text-modal);
-	font-family: var(--font-family-title-home);
-}
-
-ul {
+article ul {
 	list-style-type: none;
 	display: grid;
 	justify-content: center;
 }
 
-li {
+article li {
 	padding: 10px 0px 10px 0px;
 	color: var(--color-text-modal);
 	font-weight: bold;
 }
 
-label {
+article label {
 	display: flex;
 	align-items: center;
 	gap: 20px;
 }
 
-input {
-	height: 20px;
-	width: 20px;
+article input {
 	box-shadow: 5px 5px 5px var(--color-text-modal);
 	cursor: pointer;
 }
 
-input:hover {
+article input:hover {
 	opacity: 0.7;
-}
-
-#print-btn {
-	height: 50px;
-	width: 200px;
-	border-radius: 20px;
-	box-shadow: 10px 10px 10px var(--color-text-modal);
-	background-color: var(--color-text-modal);
-	color: var(--color-btn-modal);
-	font-weight: bolder;
-	margin: 20px 50px 20px 20px;
-	border: none;
-	cursor: pointer;
-}
-
-#print-btn:hover {
-	opacity: 0.7;
-	background: #d9a919;
 }
 
 input[type="checkbox"]:checked + span {
@@ -164,4 +145,43 @@ input[type="checkbox"]:checked::before {
 input[type="checkbox"]:focus {
 	outline: max(2px, 0.15em) solid currentColor;
 	outline-offset: max(2px, 0.15em);
+}
+
+#print-btn {
+	height: 50px;
+	width: 200px;
+	border-radius: 20px;
+	box-shadow: 4px 4px 4px var(--color-text-modal);
+	background-color: var(--color-text-modal);
+	color: var(--color-btn-modal);
+	font-weight: bolder;
+	margin: auto;
+	border: none;
+	cursor: pointer;
+}
+
+#print-btn:hover {
+	opacity: 0.7;
+	background: #d9a919;
+}
+
+@media screen and (max-width: 768px) {
+	.modal-checklist {
+		width: 100%;
+		box-shadow: none;
+		padding: 20px 5px 20px 5px;
+	}
+
+	article h1 {
+		font-size: 1.2rem;
+	}
+
+	input[type="checkbox"] {
+		height: 13px;
+		width: 13px;
+	}
+
+	article li {
+		font-size: 0.9rem;
+	}
 }

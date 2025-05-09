@@ -2,8 +2,29 @@ import "./Checklist.css";
 import { useEffect, useState } from "react";
 import CountryFlag from "../CountryFlag/CountryFlag";
 
+interface EmergencyInterface {
+	police: string;
+	ambulance: string;
+	pompiers: string;
+}
+
+interface CountryInterface {
+	country: string;
+	visa: string;
+	vaccines: string;
+	currency: string;
+	plug: string;
+	language: string;
+	emergency: EmergencyInterface;
+}
+
+interface CountriesInfoInterface {
+	countries: CountryInterface[];
+}
+
 function Checklist() {
-	const [countriesInfo, setCountriesInfo] = useState([]);
+	const [countriesInfo, setCountriesInfo] =
+		useState<CountriesInfoInterface | null>(null);
 
 	useEffect(() => {
 		fetch(
