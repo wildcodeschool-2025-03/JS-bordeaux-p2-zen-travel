@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./Climat.css";
 
 interface Country {
-	translations: { fra: { common: string } };
+	translations: Record<string, { common: string }>;
 }
 
 interface DataClimat {
@@ -72,7 +72,7 @@ function Climat({ country }: { country: Country }) {
 					<h4>Climat non disponible</h4>
 					<p className="no-data">
 						Les données climatiques pour
-						<span>{country.translations.fra.common}</span> ne sont pas encore
+						<span> {country.translations.fra.common}</span> ne sont pas encore
 						disponibles.
 					</p>
 					<img
