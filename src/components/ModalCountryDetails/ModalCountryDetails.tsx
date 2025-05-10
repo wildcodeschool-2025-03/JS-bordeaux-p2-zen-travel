@@ -86,7 +86,7 @@ function ModalCountryDetails({
 
 							{activTab === "Gastronomie" && <Gastronomy />}
 
-							{activTab === "Climat" && <Climat />}
+							{activTab === "Climat" && <Climat country={country} />}
 
 							{activTab === "Tips" && <Tips />}
 
