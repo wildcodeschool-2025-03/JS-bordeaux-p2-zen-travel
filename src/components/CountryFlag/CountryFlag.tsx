@@ -10,7 +10,7 @@ function CountryFlag() {
 	const [flags, setFlags] = useState<CountryFlagInterface[]>([]);
 
 	useEffect(() => {
-		fetch("https://restcountries.com/v3.1/alpha/FR")
+		fetch(`https://restcountries.com/v3.1/alpha/alpha/${countryCode}`)
 			.then((response) => response.json())
 			.then((data) => setFlags(data))
 			.catch((err) => console.error("Erreur de fetch :", err));
