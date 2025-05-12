@@ -118,7 +118,7 @@ function SearchBar({
 			.toLowerCase()
 			.startsWith(searchCountry.toLowerCase())
 			? country.name
-			: searchCountry + country.name.slice(searchCountry.length);
+			: "";
 		setAutoCompletion(match.charAt(0).toLowerCase() + match.slice(1));
 	};
 
