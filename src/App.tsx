@@ -6,10 +6,17 @@ import Checklist from "./components/Checklist/Checklist";
 function App() {
 	return (
 		<>
-			<nav>
-				<Link to="/">Page d'accueil</Link>
-				<Link to="/interactive-map">Carte interactive</Link>
-			</nav>
+			<header>
+				<nav className="header-navbar">
+					<Link to="/" className="logo">
+						<img src="src/assets/logo.png" alt="logo" />
+					</Link>
+					<ul>
+						<li>📞 +33 7 22 58 46 11</li>
+						<li>🗨️ Une question ?</li>
+					</ul>
+				</nav>
+			</header>
 
 			<main>
 				<Outlet />
