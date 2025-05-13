@@ -9,25 +9,53 @@ interface MustSeePlace {
 	picture: string;
 }
 
+interface CountryProp {
+	country: {
+		translations: {
+			fra: {
+				common: string;
+			};
+		};
+	};
+}
 interface Country {
 	country: string;
 	must_see_places: MustSeePlace[];
 }
 
-function Slider() {
+function Slider({ country }: CountryProp) {
 	const [myPlaces, setMyPlaces] = useState<MustSeePlace[]>([]);
 
 	useEffect(() => {
+		if (!country) return;
+
+		const countryName = country.translations.fra.common;
+
 		fetch(
-			"https://my-json-server.typicode.com/wildcodeschool-2025-03/JS-bordeaux-p2-api-zen-travel/countries",
+			"https://my-json-server.typicode.com/wildcodeschool-2025-03/JS-bordeaux-p2-api-zen-travel/db",
 		)
 			.then((response) => response.json())
 			.then((data) => {
-				const firstCountryPlaces = data[0]?.must_see_places.slice(0, 3) || [];
-				setMyPlaces(firstCountryPlaces);
+				const allCountries = [
+					{ name: "Maroc", index: 0 },
+					{ name: "France", index: 1 },
+					{ name: "États-Unis", index: 2 },
+				];
+				const selectedCountry = allCountries.find(
+					(c) => c.name === countryName,
+				);
+
+				if (selectedCountry) {
+					const places =
+						data.countries[selectedCountry.index]?.must_see_places.slice(
+							0,
+							3,
+						) || [];
+					setMyPlaces(places);
+				}
 			})
 			.catch((err) => console.error(err));
-	}, []);
+	}, [country]);
 
 	if (myPlaces.length === 0) return <p>Chargement...</p>;
 
@@ -45,11 +73,11 @@ function Slider() {
 							className="carouselImage"
 							src={`src/assets/images/${place.picture}`}
 							alt={place.name}
-							// style={{
-							// 	width: "190px",
-							// 	height: "160px",
-							// 	objectFit: "cover",
-							// }}
+							style={{
+								width: "190px",
+								height: "160px",
+								objectFit: "cover",
+							}}
 						/>
 						<h2>{place.name}</h2>
 						<p>{place.description}</p>

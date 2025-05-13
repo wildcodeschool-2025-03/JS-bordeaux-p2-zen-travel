@@ -1,13 +1,7 @@
 import "./Climat.css";
 
 function Climat() {
-	return (
-		<>
-			<h1>
-				<p>Climat</p>
-			</h1>
-		</>
-	);
+	return <h1>Climat</h1>;
 }
 
 export default Climat;
