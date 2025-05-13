@@ -2,7 +2,7 @@
 	background: linear-gradient(to bottom, rgb(66, 140, 149), white);
 	margin: auto;
 	width: 800px;
-	height: 60vh;
+	height: auto;
 	border-radius: 10px;
 	border: solid rgb(66, 140, 149);
 	box-shadow: 20px 20px 20px 0 rgb(66, 140, 149, 0.6);
@@ -41,9 +41,13 @@ nav button {
 	color: white;
 	font-size: large;
 	font-weight: bold;
+	cursor: pointer;
 }
 nav button:hover {
-	border-bottom: 3px solid white;
+	transform: scale(1.05);
+	transition: all 0.3s ease;
+	background: linear-gradient(to bottom, rgb(66, 140, 149), white);
+	border-radius: 15px;
 }
 
 .info h2,
@@ -51,20 +55,30 @@ p {
 	color: rgb(66, 140, 149);
 }
 
-.pack-your-bag {
+/* .pack-your-bag {
 	background-color: rgb(66, 140, 149);
 	width: 70%;
 	height: 40px;
 	border-radius: 15px;
 	margin: auto;
-}
+} */
 
 .pack-your-bag button {
-	background: none;
+	background: rgb(66, 140, 149);
+	width: 30%;
 	border: none;
 	color: white;
 	font-size: large;
-	padding: 9px;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.pack-your-bag button:hover {
+	background: linear-gradient(to bottom, rgb(66, 140, 149), white);
+	transform: scale(1.05);
+	transition: all 0.3s ease;
+	border-radius: 15px;
+	cursor: pointer;
 }
 .modal-content {
 	font-weight: bold;

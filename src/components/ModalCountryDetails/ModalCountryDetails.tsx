@@ -21,7 +21,7 @@ function ModalCountryDetails() {
 	useEffect(() => {
 		fetch("https://restcountries.com/v3.1/all")
 			.then((response) => response.json())
-			.then((data) => setCountry(data[56]))
+			.then((data) => setCountry(data[54]))
 			.catch((err) => console.error(err));
 	}, []);
 
@@ -67,7 +67,7 @@ function ModalCountryDetails() {
 									<h2>{country.translations.fra.common}</h2>
 									<p>Capital: {country.capital?.[0]}</p>
 									<p>Region: {country.region}</p>
-									<p>Population: {country.population.toLocaleString()}</p>
+									<p>Population: {country.population.toLocaleString()} Hab</p>
 									<p>
 										Langue :
 										{country.languages &&
