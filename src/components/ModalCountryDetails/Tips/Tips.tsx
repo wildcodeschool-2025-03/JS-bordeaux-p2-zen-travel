@@ -1,0 +1,7 @@
+import "./Tips.css";
+
+function Tips() {
+	return <h1>Tips</h1>;
+}
+
+export default Tips;

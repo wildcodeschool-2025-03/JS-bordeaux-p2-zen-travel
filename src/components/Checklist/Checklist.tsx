@@ -1,4 +1,4 @@
-function ModalChecklist() {
+function Checklist() {
 	return (
 		<div>
 			<h1>Pack ta valise</h1>
@@ -7,4 +7,4 @@ function ModalChecklist() {
 	);
 }
 
-export default ModalChecklist;
+export default Checklist;

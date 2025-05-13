@@ -1,0 +1,73 @@
+.info {
+	background: linear-gradient(to bottom, rgb(66, 140, 149), white);
+	margin: auto;
+	width: 90%;
+	max-width: 800px;
+	height: auto;
+	max-height: 80vh;
+	border-radius: 10px;
+	border: solid rgb(66, 140, 149);
+	box-shadow: 20px 20px 20px 0 rgb(66, 140, 149, 0.6);
+	padding: 20px;
+	position: relative;
+}
+
+.flag-countries {
+	border-radius: 10px;
+	width: 150px;
+}
+
+.close-button {
+	position: absolute;
+	background-color: white;
+	font-weight: bold;
+	right: 10px;
+	top: 10px;
+}
+
+.navbar {
+	display: inline-block;
+	display: flex;
+	justify-content: space-evenly;
+	height: 40px;
+}
+section nav {
+	background-color: rgb(66, 140, 149);
+	padding: 10px;
+	margin: 10px;
+}
+
+nav button {
+	background: none;
+	border: none;
+	color: white;
+	font-size: large;
+	font-weight: bold;
+}
+nav button:hover {
+	border-bottom: 3px solid white;
+}
+
+.info h2,
+p {
+	color: rgb(66, 140, 149);
+}
+
+.pack-your-bag {
+	background-color: rgb(66, 140, 149);
+	width: 70%;
+	height: 40px;
+	border-radius: 15px;
+	margin: auto;
+}
+
+.pack-your-bag button {
+	background: none;
+	border: none;
+	color: white;
+	font-size: large;
+	padding: 9px;
+}
+.modal-content {
+	font-weight: bold;
+}
