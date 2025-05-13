@@ -46,13 +46,16 @@ header .header-navbar {
 }
 
 header .header-navbar .logo img {
-	width: 50%;
-	height: 50%;
+	width: 60%;
+	height: 70%;
 	filter: brightness(0.6);
 	background-color: transparent;
 	border: none;
 	padding: 0;
 	margin: 0;
+}
+header .header-navbar .logo {
+	z-index: 20;
 }
 
 header .header-navbar ul {
@@ -77,6 +80,7 @@ header .header-navbar ul li {
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 	cursor: pointer;
 	transition: all 0.3s ease;
+	z-index: 20;
 }
 
 @media (max-width: 768px) {
@@ -97,15 +101,6 @@ header .header-navbar ul li {
 		color: #674600;
 		transform: scale(1.02);
 		box-shadow: 0 6px 18px rgba(242, 201, 76, 0.4);
-	}
-
-	@keyframes pulse {
-		0% {
-			transform: scale(1);
-		}
-		100% {
-			transform: scale(1.1);
-		}
 	}
 
 	.menu {

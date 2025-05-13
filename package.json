@@ -16,14 +16,14 @@
 		"beercontest": "file:",
 		"dotenv": "^16.4.5",
 		"gg": "file:",
+		"jquery": "^3.7.1",
 		"lesperses": "file:",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
 		"react-icons": "^5.5.0",
 		"react-router": "^7.5.1",
 		"react-router-dom": "^7.5.1",
-		"react-simple-typewriter": "^5.0.1",
-		"three": "^0.176.0"
+		"react-simple-typewriter": "^5.0.1"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.2",
