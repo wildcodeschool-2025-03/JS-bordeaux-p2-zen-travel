@@ -2,6 +2,7 @@ section.interactive-map {
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
+	overflow: hidden;
 }
 
 .map-wrapper {
