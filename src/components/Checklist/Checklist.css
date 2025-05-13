@@ -1,15 +1,13 @@
-.info {
-	background: linear-gradient(to bottom, rgb(66, 140, 149), white);
-	margin: auto;
+.modal-checklist {
 	width: 90%;
-	max-width: 800px;
-	height: auto;
-	max-height: 80vh;
+	background: #8ec7cd;
+	margin: auto;
 	border-radius: 10px;
+	padding: 20px;
 	border: solid rgb(66, 140, 149);
 	box-shadow: 20px 20px 20px 0 rgb(66, 140, 149, 0.6);
-	padding: 20px;
-	position: relative;
+	height: auto;
+	max-height: 80vh;
 }
 
 #close-btn {
@@ -29,8 +27,8 @@
 }
 
 article img {
-	width: 150px;
 	border-radius: 10px;
+	width: 150px;
 }
 
 article h1 {

@@ -1,4 +1,4 @@
-// import "./Checklist.css";
+import "./Checklist.css";
 import { useEffect, useState } from "react";
 
 interface EmergencyInterface {
@@ -92,7 +92,7 @@ function Checklist({ country, isOpen, onClose }: ChecklistProps) {
 	return (
 		<>
 			{isOpen && (
-				<article className="info">
+				<article className="modal-checklist">
 					<button type="button" id="close-btn" onClick={() => onClose()}>
 						X
 					</button>

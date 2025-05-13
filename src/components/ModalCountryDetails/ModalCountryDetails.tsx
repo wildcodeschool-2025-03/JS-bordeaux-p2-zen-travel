@@ -36,24 +36,22 @@ function ModalCountryDetails({
 	}, [countryCode]);
 
 	return (
-		<section className="info">
-			<div>
-				{country ? (
-					isOpen ? (
-						<Checklist
-							country={country}
-							isOpen={isOpen}
-							onClose={() => {
-								setIsOpen(false);
-							}}
-						/>
-					) : (
-						<>
+		<section>
+			{country ? (
+				isOpen ? (
+					<Checklist
+						country={country}
+						isOpen={isOpen}
+						onClose={() => setIsOpen(false)}
+					/>
+				) : (
+					<>
+						<section className="info">
 							<img
 								className="flag-countries"
 								src={country.flags.png}
 								alt="countryFlag"
-							/>{" "}
+							/>
 							<button type="button" className="close-button" onClick={onClose}>
 								X
 							</button>
@@ -79,7 +77,8 @@ function ModalCountryDetails({
 								>
 									Lieux à visiter
 								</button>
-							</nav>{" "}
+							</nav>
+
 							<div className="modal-content">
 								{activTab === "Infos" && (
 									<>
@@ -93,28 +92,23 @@ function ModalCountryDetails({
 												Object.values(country.languages).join(" , ")}
 										</p>
 									</>
-								)}{" "}
-								{activTab === "Gastronomie" && <Gastronomy />}{" "}
-								{activTab === "Climat" && <Climat />}{" "}
-								{activTab === "Tips" && <Tips />}{" "}
+								)}
+								{activTab === "Gastronomie" && <Gastronomy />}
+								{activTab === "Climat" && <Climat />}
+								{activTab === "Tips" && <Tips />}
 								{activTab === "Lieux à visiter" && <Places />}
 							</div>
-							<section>
-								<button
-									type="button"
-									onClick={() => {
-										setIsOpen(true);
-									}}
-								>
+							<section className="pack-your-bag">
+								<button type="button" onClick={() => setIsOpen(true)}>
 									Pack ta valise
 								</button>
 							</section>
-						</>
-					)
-				) : (
-					<p>Désolé, le pays sélectionné n'est pas dans la liste !</p>
-				)}
-			</div>
+						</section>
+					</>
+				)
+			) : (
+				<p>Désolé, le pays sélectionné n'est pas dans la liste !</p>
+			)}
 		</section>
 	);
 }
