@@ -2,7 +2,6 @@ import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { Link, Outlet } from "react-router";
 import "./App.css";
-import Gastronomy from "./components/Gastronomy/Gastronomy";
 
 function App() {
 	const [menuOpen, setMenuOpen] = useState(false);
