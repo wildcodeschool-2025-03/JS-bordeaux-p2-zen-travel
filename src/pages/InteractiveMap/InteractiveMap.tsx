@@ -3,6 +3,7 @@ import ModalCountryDetails from "../../components/ModalCountryDetails/ModalCount
 import "./InteractiveMap.css";
 import { VectorMap } from "@react-jvectormap/core";
 import { worldMill } from "@react-jvectormap/world";
+import SearchBar from "../../components/SearchBar/SearchBar";
 
 interface CountryRegionDetails {
 	cca2: string;
@@ -24,6 +25,9 @@ const continentColorMap: Record<string, string> = {
 function InteractiveMap() {
 	const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
 	const [continentColors, setContinentColors] = useState({});
+	const [resetSearch, setResetSearch] = useState<boolean>(false);
+	const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
+	const [continentColorsByCountry, setContinentColorsByCountry] = useState({});
 
 	useEffect(() => {
 		const fetchContinents = async () => {
@@ -35,6 +39,7 @@ function InteractiveMap() {
 			const colors = data.reduce(
 				(acc: Accumulator, country: CountryRegionDetails) => {
 					const color = continentColorMap[country.region];
+
 					if (color) {
 						acc[country.cca2] = color;
 					}
@@ -42,22 +47,43 @@ function InteractiveMap() {
 				},
 				{},
 			);
-			setContinentColors(colors);
+			setContinentColorsByCountry(colors);
 		};
 		fetchContinents();
 	}, []);
 
+	useEffect(() => {
+		if (!hoveredCountry) {
+			setContinentColors({});
+			return;
+		}
+		setContinentColors({ [hoveredCountry]: "#f39c12" });
+	}, [hoveredCountry]);
+
 	const handlecountryClick = (_e: unknown, countryCode: string) => {
 		setSelectedCountry(countryCode);
 	};
+
+	const handleResetSearch = () => {
+		setResetSearch(true);
+		setHoveredCountry(null);
+		setTimeout(() => setResetSearch(false), 100);
+	};
+
 	return (
 		<section>
+			<SearchBar
+				onCountrySelected={setSelectedCountry}
+				resetInput={resetSearch}
+				onCountryHovered={setHoveredCountry}
+			/>
 			{selectedCountry && (
 				<div className="modal-info">
 					<ModalCountryDetails
 						countryCode={selectedCountry}
 						onClose={() => {
 							setSelectedCountry(null);
+							handleResetSearch();
 						}}
 					/>
 				</div>
@@ -72,7 +98,7 @@ function InteractiveMap() {
 					series={{
 						regions: [
 							{
-								values: { ...continentColors },
+								values: { ...continentColorsByCountry, ...continentColors },
 								attribute: "fill",
 							},
 						],

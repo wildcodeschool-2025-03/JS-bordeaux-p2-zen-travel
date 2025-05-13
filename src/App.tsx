@@ -1,9 +1,13 @@
+import { useState } from "react";
+import { FiMenu, FiX } from "react-icons/fi";
 import { Link, Outlet } from "react-router";
 import "./App.css";
 import "./components/Checklist/Checklist";
 import Checklist from "./components/Checklist/Checklist";
 
 function App() {
+	const [menuOpen, setMenuOpen] = useState(false);
+
 	return (
 		<>
 			<header>
@@ -11,7 +15,14 @@ function App() {
 					<Link to="/" className="logo">
 						<img src="src/assets/logo.png" alt="logo" />
 					</Link>
-					<ul>
+					<button
+						type="button"
+						className="burger-icon"
+						onClick={() => setMenuOpen((prev) => !prev)}
+					>
+						{menuOpen ? <FiX /> : <FiMenu />}
+					</button>
+					<ul className={menuOpen ? "menu open" : "menu"}>
 						<li>📞 +33 7 22 58 46 11</li>
 						<li>🗨️ Une question ?</li>
 					</ul>
