@@ -30,7 +30,6 @@ function App() {
 
 			<main>
 				<Outlet />
-				<Gastronomy />
 			</main>
 
 			<footer>&copy; Copyright 2025 by ITM.</footer>
