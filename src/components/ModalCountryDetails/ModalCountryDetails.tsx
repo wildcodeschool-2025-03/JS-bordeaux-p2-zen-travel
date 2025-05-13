@@ -37,27 +37,26 @@ function ModalCountryDetails({
 
 	return (
 		<section className="info">
-			{country ? (
-				isOpen ? (
-					<Checklist
-						country={country}
-						isOpen={isOpen}
-						onClose={() => {
-							setIsOpen(false);
-						}}
-					/>
-				) : (
-					<>
-						<div>
+			<div>
+				{country ? (
+					isOpen ? (
+						<Checklist
+							country={country}
+							isOpen={isOpen}
+							onClose={() => {
+								setIsOpen(false);
+							}}
+						/>
+					) : (
+						<>
 							<img
 								className="flag-countries"
 								src={country.flags.png}
 								alt="countryFlag"
-							/>
+							/>{" "}
 							<button type="button" className="close-button" onClick={onClose}>
-								X{" "}
+								X
 							</button>
-
 							<nav className="navbar">
 								<button type="button" onClick={() => setActivTab("Infos")}>
 									Infos
@@ -80,8 +79,7 @@ function ModalCountryDetails({
 								>
 									Lieux à visiter
 								</button>
-							</nav>
-
+							</nav>{" "}
 							<div className="modal-content">
 								{activTab === "Infos" && (
 									<>
@@ -95,29 +93,29 @@ function ModalCountryDetails({
 												Object.values(country.languages).join(" , ")}
 										</p>
 									</>
-								)}
-
-								{activTab === "Gastronomie" && <Gastronomy />}
-								{activTab === "Climat" && <Climat />}
-								{activTab === "Tips" && <Tips />}
+								)}{" "}
+								{activTab === "Gastronomie" && <Gastronomy />}{" "}
+								{activTab === "Climat" && <Climat />}{" "}
+								{activTab === "Tips" && <Tips />}{" "}
 								{activTab === "Lieux à visiter" && <Places />}
 							</div>
-						</div>
-						<button
-							type="button"
-							onClick={() => {
-								setIsOpen(true);
-							}}
-						>
-							Pack ta valise
-						</button>
-					</>
-				)
-			) : (
-				<p>désolée</p>
-			)}
+							<section>
+								<button
+									type="button"
+									onClick={() => {
+										setIsOpen(true);
+									}}
+								>
+									Pack ta valise
+								</button>
+							</section>
+						</>
+					)
+				) : (
+					<p>Désolé, le pays sélectionné n'est pas dans la liste !</p>
+				)}
+			</div>
 		</section>
 	);
 }
-
 export default ModalCountryDetails;

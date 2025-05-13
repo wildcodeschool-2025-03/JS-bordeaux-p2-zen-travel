@@ -1,12 +1,15 @@
-.modal-checklist {
-	height: 70%;
-	width: 70%;
-	background: #8ec7cd;
-	opacity: 0.8;
+.info {
+	background: linear-gradient(to bottom, rgb(66, 140, 149), white);
 	margin: auto;
-	border-radius: 25px;
-	padding: 40px 15px 40px 15px;
-	box-shadow: 30px 30px 15px var(--color-text-modal);
+	width: 90%;
+	max-width: 800px;
+	height: auto;
+	max-height: 80vh;
+	border-radius: 10px;
+	border: solid rgb(66, 140, 149);
+	box-shadow: 20px 20px 20px 0 rgb(66, 140, 149, 0.6);
+	padding: 20px;
+	position: relative;
 }
 
 #close-btn {
@@ -23,6 +26,11 @@
 	border-radius: 25px;
 	border-color: var(--color-text-modal);
 	cursor: pointer;
+}
+
+article img {
+	width: 150px;
+	border-radius: 10px;
 }
 
 article h1 {
