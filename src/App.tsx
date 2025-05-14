@@ -2,11 +2,15 @@ import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { Link, Outlet } from "react-router";
 import "./App.css";
+import ContactBox from "./components/ContactBox/ContactBox";
 import "./components/Checklist/Checklist";
-import Checklist from "./components/Checklist/Checklist";
 
 function App() {
 	const [menuOpen, setMenuOpen] = useState(false);
+	const [showContactBox, setShowContactBox] = useState(false);
+	const toggleContactBox = () => {
+		setShowContactBox(!showContactBox);
+	};
 
 	return (
 		<>
@@ -24,14 +28,22 @@ function App() {
 					</button>
 					<ul className={menuOpen ? "menu open" : "menu"}>
 						<li>📞 +33 7 22 58 46 11</li>
-						<li>🗨️ Une question ?</li>
+						<li>
+							<button
+								className="bouttonQuestion"
+								type="button"
+								onClick={toggleContactBox}
+							>
+								🗨️ Une question ?
+							</button>
+							{showContactBox && <ContactBox />}
+						</li>
 					</ul>
 				</nav>
 			</header>
 
 			<main>
 				<Outlet />
-				<Checklist />
 			</main>
 
 			<footer>&copy; Copyright 2025 by ITM.</footer>
