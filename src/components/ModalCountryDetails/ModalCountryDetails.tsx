@@ -75,7 +75,7 @@ function ModalCountryDetails({
 									<h2>{country.translations.fra.common}</h2>
 									<p>Capital: {country.capital?.[0]}</p>
 									<p>Region: {country.region}</p>
-									<p>Population: {country.population.toLocaleString()}</p>
+									<p>Population: {country.population.toLocaleString()} Hab</p>
 									<p>
 										Langue :
 										{country.languages &&
@@ -90,7 +90,7 @@ function ModalCountryDetails({
 
 							{activTab === "Tips" && <Tips />}
 
-							{activTab === "Lieux à visiter" && <Places />}
+							{activTab === "Lieux à visiter" && <Places country={country} />}
 						</div>
 					</div>
 				) : (
