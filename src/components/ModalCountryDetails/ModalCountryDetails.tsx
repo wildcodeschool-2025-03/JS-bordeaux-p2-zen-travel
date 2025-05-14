@@ -29,8 +29,6 @@ function ModalCountryDetails({
 	const [isMobile, setIsMobile] = useState(false);
 	const [showContent, setShowContent] = useState(false);
 
-	const tabs = ["Infos", "Gastronomie", "Climat", "Tips", "Places"];
-
 	useEffect(() => {
 		const handleResize = () => {
 			setIsMobile(window.innerWidth <= 768);
@@ -110,11 +108,11 @@ function ModalCountryDetails({
 							type="button"
 							className="btn-mobile grid"
 							onClick={() => {
-								setActivTab("Places");
+								setActivTab("Lieux à visiter");
 								setShowContent(true);
 							}}
 						>
-							<span className="weather">📍</span> Places
+							<span className="weather">📍</span> Lieux à visiter
 						</button>
 					</div>
 				</div>
@@ -178,7 +176,7 @@ function ModalCountryDetails({
 
 					{activTab === "Tips" && <Tips />}
 
-					{activTab === "Lieux à visiter" && <Places />}
+					{activTab === "Lieux à visiter" && <Places country={country} />}
 				</div>
 			)}
 

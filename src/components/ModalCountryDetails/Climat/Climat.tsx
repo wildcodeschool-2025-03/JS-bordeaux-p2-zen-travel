@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 import "./Climat.css";
+import { useFetchData } from "../DataFetch/DataFetch";
 
 interface Country {
 	translations: Record<string, { common: string }>;
@@ -10,33 +10,7 @@ interface DataClimat {
 }
 
 function Climat({ country }: { country: Country }) {
-	const [dataClimat, setDataClimat] = useState<DataClimat | null>(null);
-
-	useEffect(() => {
-		async function fetchDataClimat() {
-			const response = await fetch(
-				"https://my-json-server.typicode.com/wildcodeschool-2025-03/JS-bordeaux-p2-api-zen-travel/db",
-			);
-			const data = await response.json();
-
-			const countryName = country.translations.fra.common;
-
-			const allCountries = [
-				{ name: "Maroc", index: 0 },
-				{ name: "France", index: 1 },
-				{ name: "États-Unis", index: 2 },
-			];
-			const selectedCountry = allCountries.find(
-				(country) => country.name === countryName,
-			);
-
-			if (selectedCountry) {
-				setDataClimat(data.countries[selectedCountry.index]);
-			}
-		}
-
-		fetchDataClimat();
-	}, [country]);
+	const dataClimat: DataClimat = useFetchData(country);
 
 	function getWeatherIcon(average: number, rainfall: number) {
 		if (rainfall >= 90 && rainfall <= 150) return "🌧️";
