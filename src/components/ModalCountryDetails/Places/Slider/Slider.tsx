@@ -10,12 +10,10 @@ interface MustSeePlace {
 }
 
 interface CountryProp {
-	country: {
-		translations: Record<string, { common: string }>;
-	};
+	translations: Record<string, { common: string }>;
 }
 
-function Slider({ country }: CountryProp) {
+function Slider({ country }: { country: CountryProp }) {
 	const [myPlaces, setMyPlaces] = useState<MustSeePlace[]>([]);
 
 	useEffect(() => {

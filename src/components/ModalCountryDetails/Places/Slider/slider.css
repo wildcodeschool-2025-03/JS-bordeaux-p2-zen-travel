@@ -1,0 +1,21 @@
+.carousel {
+	width: 60%;
+	margin: auto;
+}
+.carouselImage {
+	margin-top: 20px;
+}
+
+.thumbs {
+	display: none;
+}
+.carousel .slide img {
+	width: 250px;
+	height: 150px;
+}
+
+.slide P {
+	width: 70%;
+	margin: auto;
+	margin-bottom: 20px;
+}

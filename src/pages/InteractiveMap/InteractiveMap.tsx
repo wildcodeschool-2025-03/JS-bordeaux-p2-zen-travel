@@ -1,9 +1,12 @@
-import { useEffect, useState } from "react";
+import $ from "jquery";
+import { useEffect, useRef, useState } from "react";
 import ModalCountryDetails from "../../components/ModalCountryDetails/ModalCountryDetails";
 import "./InteractiveMap.css";
 import { VectorMap } from "@react-jvectormap/core";
 import { worldMill } from "@react-jvectormap/world";
 import SearchBar from "../../components/SearchBar/SearchBar";
+import ContinentModal from "./ContinentModal/ContinentModal";
+import { handleResetZoom, zoomOnContinent } from "./ContinentModal/zoomUtils";
 
 interface CountryRegionDetails {
 	cca2: string;
@@ -22,12 +25,19 @@ const continentColorMap: Record<string, string> = {
 	Oceania: "#2a2a2d",
 };
 
+window.$ = $;
+window.jQuery = $;
+
 function InteractiveMap() {
 	const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
 	const [continentColors, setContinentColors] = useState({});
 	const [resetSearch, setResetSearch] = useState<boolean>(false);
 	const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
 	const [continentColorsByCountry, setContinentColorsByCountry] = useState({});
+
+	const [isMobile, setIsMobile] = useState(false);
+	const [isModaContinentlOpen, setIsModaContinentlOpen] = useState(false);
+	const mapRef = useRef(null);
 
 	useEffect(() => {
 		const fetchContinents = async () => {
@@ -53,6 +63,16 @@ function InteractiveMap() {
 	}, []);
 
 	useEffect(() => {
+		const checkIfMobile = () => {
+			setIsMobile(window.innerWidth <= 768);
+		};
+
+		checkIfMobile();
+		window.addEventListener("resize", checkIfMobile);
+		return () => window.removeEventListener("resize", checkIfMobile);
+	}, []);
+
+	useEffect(() => {
 		if (!hoveredCountry) {
 			setContinentColors({});
 			return;
@@ -70,15 +90,28 @@ function InteractiveMap() {
 		setTimeout(() => setResetSearch(false), 100);
 	};
 
+	const handleContinentSelect = (continent: string) => {
+		setIsModaContinentlOpen(false);
+		zoomOnContinent(continent, mapRef);
+	};
+
 	return (
-		<section>
+		<section className="interactive-map">
 			<SearchBar
 				onCountrySelected={setSelectedCountry}
 				resetInput={resetSearch}
 				onCountryHovered={setHoveredCountry}
 			/>
+
+			{isModaContinentlOpen && (
+				<ContinentModal
+					onClose={() => setIsModaContinentlOpen(false)}
+					onSelect={handleContinentSelect}
+				/>
+			)}
+
 			{selectedCountry && (
-				<div className="modal-info">
+				<div className={`modal-info ${selectedCountry ? "blur" : ""}`}>
 					<ModalCountryDetails
 						countryCode={selectedCountry}
 						onClose={() => {
@@ -88,22 +121,40 @@ function InteractiveMap() {
 					/>
 				</div>
 			)}
-
-			<div className="vector-map">
-				<VectorMap
-					map={worldMill}
-					backgroundColor="transparent"
-					zoomOnScroll={false}
-					onRegionClick={handlecountryClick}
-					series={{
-						regions: [
-							{
-								values: { ...continentColorsByCountry, ...continentColors },
-								attribute: "fill",
-							},
-						],
-					}}
-				/>
+			<div className="map-wrapper">
+				<div className="map-continent-mobile">
+					<button
+						type="button"
+						className="choose-continent-button"
+						onClick={() => setIsModaContinentlOpen(true)}
+					>
+						Choisir un continent
+					</button>
+					<button
+						type="button"
+						className="reset-zoom-button"
+						onClick={handleResetZoom}
+					>
+						Réinitialiser le zooom
+					</button>
+				</div>
+				<div className={`vector-map ${isMobile ? "africa" : ""} `}>
+					<VectorMap
+						ref={mapRef}
+						map={worldMill}
+						backgroundColor="transparent"
+						zoomOnScroll={false}
+						onRegionClick={handlecountryClick}
+						series={{
+							regions: [
+								{
+									values: { ...continentColorsByCountry, ...continentColors },
+									attribute: "fill",
+								},
+							],
+						}}
+					/>
+				</div>
 			</div>
 		</section>
 	);
