@@ -1,9 +1,9 @@
-ul {
+ul.placeList {
 	display: flex;
 	padding: initial;
 }
 
-ul li {
+ul.placeList li.places-card {
 	list-style-type: none;
 	margin: 10px;
 	border-radius: 15px;
@@ -11,11 +11,11 @@ ul li {
 	box-shadow: 20px 20px 20px 0 rgb(66, 140, 149, 0.6);
 }
 
-ul img {
+ul.placeList img {
 	border-radius: 5px;
 }
 
-ul li:hover {
+ul.placeList li.places-card:hover {
 	transform: scale(1.05);
 	transition: all 0.3s ease;
 	background: linear-gradient(to bottom, rgb(66, 140, 149), white);

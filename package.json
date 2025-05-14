@@ -16,6 +16,7 @@
 		"beercontest": "file:",
 		"dotenv": "^16.4.5",
 		"gg": "file:",
+		"jquery": "^3.7.1",
 		"lesperses": "file:",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
