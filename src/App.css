@@ -130,3 +130,14 @@ header .header-navbar ul li {
 		flex-direction: column;
 	}
 }
+
+.bouttonQuestion {
+	color: black;
+	cursor: pointer;
+}
+
+.menu {
+	display: flex;
+	align-items: baseline;
+	margin-bottom: auto;
+}
