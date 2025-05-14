@@ -7,7 +7,6 @@
 
 .dishes {
 	display: flex;
-	flex-wrap: wrap;
 	width: 100%;
 	justify-content: space-around;
 	margin: 10px 0px 10px 0px;
@@ -15,7 +14,7 @@
 
 .dish-card {
 	width: 210px;
-	height: 290px;
+	height: 320px;
 	margin: auto;
 	border: 1px solid var(--main-color-modal);
 	border-radius: 20px;

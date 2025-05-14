@@ -1,6 +1,6 @@
 import "./Gastronomy.css";
 import "./Slider/Slider.css";
-import { useEffect, useState } from "react";
+import { useFetchData } from "../DataFetch/DataFetch.tsx";
 import Slider from "./Slider/Slider.tsx";
 
 interface DishInterface {
@@ -10,46 +10,28 @@ interface DishInterface {
 	picture: string;
 }
 
-interface CountryInterface {
-	country: string;
+interface FetchDataResult {
 	typical_dishes: DishInterface[];
 }
 
-interface CountriesInfoInterface {
-	countries: CountryInterface[];
+interface GastronomyProps {
+	country: string;
 }
 
-function Gastronomy() {
-	const [countriesInfo, setCountriesInfo] =
-		useState<CountriesInfoInterface | null>(null);
+function Gastronomy({ country }: GastronomyProps) {
+	const dataGastronomy: FetchDataResult | null = useFetchData(country);
 
-	useEffect(() => {
-		fetch(
-			"https://my-json-server.typicode.com/wildcodeschool-2025-03/JS-bordeaux-p2-api-zen-travel/db",
-		)
-			.then((response) => response.json())
-			.then((data) => setCountriesInfo(data))
-			.catch((err) => console.error("Erreur de fetch :", err));
-	}, []);
-
-	if (
-		!countriesInfo ||
-		!countriesInfo.countries ||
-		countriesInfo.countries.length < 2
-	) {
-		return <h1>Chargement du pays...</h1>;
-	}
-	const country = countriesInfo.countries[0];
+	if (!dataGastronomy) return null;
 
 	return (
 		<article className="gastronomy-body">
 			<h1>Plats Typiques</h1>
-			<Slider />
+			<Slider country={country} />
 			<div className="dishes">
-				{country.typical_dishes.slice(0, 3).map((dish) => (
+				{dataGastronomy?.typical_dishes.slice(0, 3).map((dish) => (
 					<div key={dish.id} className="dish-card">
 						<img
-							src={`src/img/${dish.picture}`}
+							src={`src/assets/images/${dish.picture}`}
 							alt="typical-dish-picture"
 							id={`dish-${dish.id}`}
 						/>

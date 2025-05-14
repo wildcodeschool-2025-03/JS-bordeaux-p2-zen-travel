@@ -1,7 +1,6 @@
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import "./Slider.css";
-import { useEffect, useState } from "react";
 
 interface DishInterface {
 	id: string;
@@ -10,42 +9,25 @@ interface DishInterface {
 	picture: string;
 }
 
-interface CountryInterface {
-	country: string;
+interface FetchDataResult {
 	typical_dishes: DishInterface[];
 }
 
-interface CountriesInfoInterface {
-	countries: CountryInterface[];
+interface SliderProps {
+	country: string;
 }
 
-function Slider() {
-	const [countriesInfo, setCountriesInfo] =
-		useState<CountriesInfoInterface | null>(null);
+function Slider({ country }: SliderProps) {
+	const dataGastronomy: FetchDataResult | null = useFetchData(country);
 
-	useEffect(() => {
-		fetch(
-			"https://my-json-server.typicode.com/wildcodeschool-2025-03/JS-bordeaux-p2-api-zen-travel/db",
-		)
-			.then((response) => response.json())
-			.then((data) => setCountriesInfo(data))
-			.catch((err) => console.error("Erreur de fetch :", err));
-	}, []);
+	if (!dataGastronomy) return null;
 
-	if (
-		!countriesInfo ||
-		!countriesInfo.countries ||
-		countriesInfo.countries.length < 2
-	) {
-		return <h1>Chargement du pays...</h1>;
-	}
-	const country = countriesInfo.countries[0];
 	return (
 		<Carousel className="dishes" autoPlay interval={5000} infiniteLoop>
-			{country.typical_dishes.slice(0, 3).map((dish) => (
+			{dataGastronomy.typical_dishes.slice(0, 3).map((dish) => (
 				<div key={dish.id} className="dish-card-slider">
 					<img
-						src={`src/img/${dish.picture}`}
+						src={`src/assets/images/${dish.picture}`}
 						alt="typical-dish-picture"
 						id={`dish-${dish.id}`}
 					/>
