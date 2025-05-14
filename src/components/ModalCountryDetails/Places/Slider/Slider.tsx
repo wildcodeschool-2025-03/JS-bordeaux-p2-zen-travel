@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import "./slider.css";
@@ -11,16 +11,8 @@ interface MustSeePlace {
 
 interface CountryProp {
 	country: {
-		translations: {
-			fra: {
-				common: string;
-			};
-		};
+		translations: Record<string, { common: string }>;
 	};
-}
-interface Country {
-	country: string;
-	must_see_places: MustSeePlace[];
 }
 
 function Slider({ country }: CountryProp) {

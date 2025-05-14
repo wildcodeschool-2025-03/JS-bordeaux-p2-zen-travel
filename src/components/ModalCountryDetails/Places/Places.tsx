@@ -7,17 +7,10 @@ interface MustSeePlace {
 	description: string;
 	picture: string;
 }
-interface Country {
-	country: string;
-	must_see_places: MustSeePlace[];
-}
+
 interface CountryProp {
 	country: {
-		translations: {
-			fra: {
-				common: string;
-			};
-		};
+		translations: Record<string, { common: string }>;
 	};
 }
 
