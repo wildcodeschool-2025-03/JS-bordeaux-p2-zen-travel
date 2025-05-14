@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import "./Tips.css";
 
-function Tips({ country }) {
+interface Country {
+	translations: Record<string, { common: string }>;
+}
+
+function Tips({ country }: { country: Country }) {
 	const [dataTips, setDataTips] = useState(null);
 	const [currentTips, setCurrentTips] = useState(0);
 
