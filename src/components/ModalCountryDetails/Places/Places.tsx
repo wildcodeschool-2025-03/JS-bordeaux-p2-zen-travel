@@ -9,12 +9,10 @@ interface MustSeePlace {
 }
 
 interface CountryProp {
-	country: {
-		translations: Record<string, { common: string }>;
-	};
+	translations: Record<string, { common: string }>;
 }
 
-function Places({ country }: CountryProp) {
+function Places({ country }: { country: CountryProp }) {
 	const [myplaces, setMyPlace] = useState<MustSeePlace[]>([]);
 
 	useEffect(() => {
@@ -43,26 +41,11 @@ function Places({ country }: CountryProp) {
 		fetchCountries();
 	}, [country]);
 
-	// useEffect(() => {
-	// 	fetch(
-	// 		"https://my-json-server.typicode.com/wildcodeschool-2025-03/JS-bordeaux-p2-api-zen-travel/countries",
-	// 	)
-	// 		.then((response) => response.json())
-	// 		.then((data) => {
-	// 			const allPlaces = data.flatMap((country) => country.must_see_places);
-	// 			const firstThree = allPlaces.slice(0, 3);
-	// 			setMyPlace(firstThree);
-
-	// 			console.log(data);
-	// 		})
-	// 		.catch((err) => console.error(err));
-	// }, []);
-
 	return (
 		<>
 			<ul className="placeList">
 				{myplaces?.map((place) => (
-					<li key={place.name}>
+					<li key={place.name} className="places-card">
 						<h2>{place.name}</h2>
 						<img src={`src/assets/images/${place.picture}`} alt={place.name} />
 						<p>{place.description}</p>
