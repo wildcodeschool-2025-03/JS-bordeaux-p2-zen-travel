@@ -1,4 +1,4 @@
-import Slider from "../../Slider/Slider";
+import Slider from "./Slider/Slider";
 import "./Places.css";
 import { useEffect, useState } from "react";
 
