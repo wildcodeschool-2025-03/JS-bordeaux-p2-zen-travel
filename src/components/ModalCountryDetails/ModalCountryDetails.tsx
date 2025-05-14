@@ -96,7 +96,7 @@ function ModalCountryDetails({
 								{activTab === "Gastronomie" && <Gastronomy />}
 								{activTab === "Climat" && <Climat />}
 								{activTab === "Tips" && <Tips />}
-								{activTab === "Lieux à visiter" && <Places />}
+								{activTab === "Lieux à visiter" && <Places country={country} />}
 							</div>
 							<section className="pack-your-bag">
 								<button type="button" onClick={() => setIsOpen(true)}>
