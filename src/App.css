@@ -140,13 +140,6 @@ header .header-navbar ul li {
 	cursor: pointer;
 }
 
-/* .bouttonQuestion:hover {
-	cursor: pointer;
-	transform: scale(1.05);
-	transition: all 0.3s ease;
-	border-radius: 15px;
-} */
-
 .menu {
 	display: flex;
 	align-items: baseline;
