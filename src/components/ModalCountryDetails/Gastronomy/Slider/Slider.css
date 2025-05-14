@@ -15,17 +15,6 @@
 	box-shadow: 5px 0px 5px var(--main-color-modal);
 }
 
-article h1 {
-	width: 250px;
-	margin: auto;
-	background: linear-gradient(to bottom, rgb(66, 140, 149, 0.4), white);
-	font-family: var(--font-family-title-home);
-	color: var(--main-color-modal);
-	padding: 5px 5px 5px 5px;
-	border-radius: 10px;
-	box-shadow: 5px 5px 5px var(--main-color-modal);
-}
-
 article h2 {
 	font-family: var(--font-family-modal);
 	color: var(--color-text-modal);

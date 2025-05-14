@@ -2,7 +2,7 @@
 	background: linear-gradient(to bottom, rgb(66, 140, 149, 0.7), white);
 	margin: auto;
 	width: 96%;
-	padding: 20px 5px 0px 5px;
+	padding: 0px 5px 0px 5px;
 }
 
 .dishes {
@@ -18,17 +18,6 @@
 	margin: auto;
 	border: 1px solid var(--main-color-modal);
 	border-radius: 20px;
-	box-shadow: 5px 5px 5px var(--main-color-modal);
-}
-
-article h1 {
-	width: 300px;
-	margin: auto;
-	background: linear-gradient(to bottom, rgb(66, 140, 149, 0.4), white);
-	font-family: var(--font-family-title-home);
-	color: var(--main-color-modal);
-	padding: 10px 5px 5px 5px;
-	border-radius: 10px;
 	box-shadow: 5px 5px 5px var(--main-color-modal);
 }
 

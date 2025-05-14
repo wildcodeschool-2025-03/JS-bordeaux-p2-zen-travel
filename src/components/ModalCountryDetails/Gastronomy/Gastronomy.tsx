@@ -25,7 +25,6 @@ function Gastronomy({ country }: GastronomyProps) {
 
 	return (
 		<article className="gastronomy-body">
-			<h1>Plats Typiques</h1>
 			<Slider country={country} />
 			<div className="dishes">
 				{dataGastronomy?.typical_dishes.slice(0, 3).map((dish) => (
