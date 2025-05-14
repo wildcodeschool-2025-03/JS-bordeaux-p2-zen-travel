@@ -13,11 +13,7 @@ interface Country {
 }
 interface CountryProp {
 	country: {
-		translations: {
-			fra: {
-				common: string;
-			};
-		};
+		translations: Record<string, { common: string }>;
 	};
 }
 
