@@ -3,6 +3,7 @@ import { FiMenu, FiX } from "react-icons/fi";
 import { Link, Outlet } from "react-router";
 import "./App.css";
 import ContactBox from "./components/ContactBox/ContactBox";
+import "./components/Checklist/Checklist";
 
 function App() {
 	const [menuOpen, setMenuOpen] = useState(false);
