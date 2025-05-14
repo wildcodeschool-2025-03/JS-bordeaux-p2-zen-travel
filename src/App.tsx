@@ -2,6 +2,8 @@ import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { Link, Outlet } from "react-router";
 import "./App.css";
+import "./components/Checklist/Checklist";
+import Checklist from "./components/Checklist/Checklist";
 
 function App() {
 	const [menuOpen, setMenuOpen] = useState(false);
@@ -29,6 +31,7 @@ function App() {
 
 			<main>
 				<Outlet />
+				<Checklist />
 			</main>
 
 			<footer>&copy; Copyright 2025 by ITM.</footer>
