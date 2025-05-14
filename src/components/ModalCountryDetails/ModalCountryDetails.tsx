@@ -137,19 +137,26 @@ function ModalCountryDetails({
 						alt="countryFlag"
 					/>
 
-					<div className="tabs">
-						{tabs.map((tab) => (
-							<button
-								key={tab}
-								type="button"
-								className={`tab-btn ${tab === activTab ? "active" : ""}`}
-								onClick={() => setActivTab(tab)}
-							>
-								{" "}
-								{tab}
-							</button>
-						))}
-					</div>
+					<nav className="navbar">
+						<button type="button" onClick={() => setActivTab("Infos")}>
+							Infos
+						</button>
+						<button type="button" onClick={() => setActivTab("Gastronomie")}>
+							Gastronomie
+						</button>
+						<button type="button" onClick={() => setActivTab("Climat")}>
+							Climat
+						</button>
+						<button type="button" onClick={() => setActivTab("Tips")}>
+							Tips
+						</button>
+						<button
+							type="button"
+							onClick={() => setActivTab("Lieux à visiter")}
+						>
+							Lieux à visiter
+						</button>
+					</nav>
 
 					{activTab === "Infos" && (
 						<div className="modal-content">

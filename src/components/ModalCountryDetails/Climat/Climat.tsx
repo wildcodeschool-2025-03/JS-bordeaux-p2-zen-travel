@@ -38,17 +38,14 @@ function Climat({ country }: { country: Country }) {
 		fetchDataClimat();
 	}, [country]);
 
-	const getWeatherIcon = (average: number, rainfall: number) => {
-		const conditions = [
-			{ condition: rainfall >= 90 && rainfall <= 150, icon: "🌧️" },
-			{ condition: average < 8, icon: "❄️" },
-			{ condition: rainfall > 80 && rainfall <= 60, icon: "🌦️" },
-			{ condition: average >= 25, icon: "🔥" },
-		];
+	function getWeatherIcon(average: number, rainfall: number) {
+		if (rainfall >= 90 && rainfall <= 150) return "🌧️";
+		if (average < 8) return "❄️";
+		if (rainfall > 60 && rainfall <= 80) return "🌦️";
+		if (average >= 25) return "🔥";
+		return "☀️";
+	}
 
-		const match = conditions.find((c) => c.condition);
-		return match?.icon || "☀️";
-	};
 	return (
 		<div className="climat animation">
 			{dataClimat?.climate ? (
