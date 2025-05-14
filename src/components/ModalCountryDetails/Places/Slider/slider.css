@@ -1,11 +1,5 @@
-ul {
-	display: flex;
-	padding: initial;
-}
-
 ul li {
 	list-style-type: none;
-	margin: 10px;
 	border-radius: 15px;
 	border: solid rgb(66, 140, 149);
 	box-shadow: 20px 20px 20px 0 rgb(66, 140, 149, 0.6);
@@ -21,15 +15,24 @@ ul li:hover {
 	background: linear-gradient(to bottom, rgb(66, 140, 149), white);
 	border-radius: 15px;
 }
-
-@media screen and (width <= 600px) {
-	.placeList {
-		display: none;
-	}
+.carousel {
+	width: 60%;
+	margin: auto;
+}
+.carouselImage {
+	margin-top: 20px;
 }
 
-@media screen and (width >= 601px) {
-	.carousel {
-		display: none;
-	}
+.thumbs {
+	display: none;
+}
+.carousel .slide img {
+	width: 250px;
+	height: 150px;
+}
+
+.slide P {
+	width: 70%;
+	margin: auto;
+	margin-bottom: 20px;
 }

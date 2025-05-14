@@ -1,0 +1,78 @@
+.contactBox {
+	position: fixed;
+	z-index: 1000;
+	right: 15px;
+	width: 60%;
+	background: linear-gradient(
+		0deg,
+		rgba(34, 193, 195, 1) 0%,
+		rgba(255, 227, 166, 1) 100%
+	);
+	border-radius: 15px;
+	margin: auto;
+}
+.contactBox p {
+	color: white;
+}
+
+.formulaire {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.formulaire label {
+	display: flex;
+	flex-direction: column;
+	font-weight: bold;
+}
+
+.formulaire input,
+.formulaire textarea {
+	width: 80%;
+	margin: auto;
+	margin-top: 0.5rem;
+	padding: 0.4rem;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+.buttonEnvoyer {
+	width: 30%;
+	padding: 10px;
+	margin: auto;
+	margin-bottom: 10px;
+	border-radius: 15px;
+	background: rgb(66, 140, 149);
+}
+
+.buttonEnvoyer:hover {
+	cursor: pointer;
+	transform: scale(1.05);
+	transition: all 0.3s ease;
+}
+
+.closeBoxe {
+	cursor: pointer;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+
+.closeBoxe:hover {
+	cursor: pointer;
+	transform: scale(1.05);
+	transition: all 0.3s ease;
+}
+
+.renseignement {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+}
+@media screen and (max-width: 776px) {
+	.renseignement {
+		flex-direction: column;
+	}
+}
