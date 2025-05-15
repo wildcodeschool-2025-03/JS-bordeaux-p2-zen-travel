@@ -1,7 +1,7 @@
 import "./Gastronomy.css";
-import "./Slider/Slider.css";
+import "./Slider/SliderGastronomy.css";
 import { useFetchData } from "../DataFetch/DataFetch.tsx";
-import Slider from "./Slider/Slider.tsx";
+import Slider from "./Slider/SliderGastronomy.tsx";
 
 interface DishInterface {
 	id: string;
@@ -32,10 +32,11 @@ function Gastronomy({ country }: GastronomyProps) {
 						<img
 							src={`src/assets/images/${dish.picture}`}
 							alt="typical-dish-picture"
+							className="dishe-img"
 							id={`dish-${dish.id}`}
 						/>
-						<h2>{dish.name}</h2>
-						<p>{dish.description}</p>
+						<h2 className="dishe-title">{dish.name}</h2>
+						<p className="dishe-description">{dish.description}</p>
 					</div>
 				))}
 			</div>

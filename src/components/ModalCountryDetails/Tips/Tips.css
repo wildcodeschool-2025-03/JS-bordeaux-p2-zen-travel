@@ -15,10 +15,10 @@
 	padding: 1rem;
 	width: 90%;
 	max-width: 700px;
-	max-height: 35vh;
-	height: auto;
+	max-height: 40vh;
+	height: 50%;
 
-	margin: 1rem auto;
+	margin: auto;
 	background: #ffffff0d;
 	border-radius: 12px;
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 5px;
@@ -136,7 +136,8 @@
 	.tips {
 		padding: 1rem;
 		width: 85%;
-		height: 45vh;
+		height: 100%;
+		margin-top: 20px;
 	}
 
 	.tip-card {

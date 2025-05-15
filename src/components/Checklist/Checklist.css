@@ -1,13 +1,13 @@
 .modal-checklist {
-	width: 800px;
+	width: 90%;
+	max-width: 700px;
 	background: #8ec7cd;
 	margin: auto;
 	border-radius: 10px;
 	padding: 20px;
 	border: solid rgb(66, 140, 149);
 	box-shadow: 20px 20px 20px 0 rgb(66, 140, 149, 0.6);
-	height: auto;
-	max-height: 80vh;
+	height: 77vh;
 	position: fixed;
 	z-index: 40000;
 }
