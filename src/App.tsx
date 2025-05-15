@@ -46,7 +46,20 @@ function App() {
 				<Outlet />
 			</main>
 
-			<footer>&copy; Copyright 2025 by ITM.</footer>
+			<footer className="simple-footer">
+				<p>© 2025 Zen Travel. Tous droits réservés.</p>
+				<div className="footer-socials">
+					<a href="https://instagram.com" target="_blank" rel="noreferrer">
+						<img src="src/assets/instagram.svg" alt="Instagram" />
+					</a>
+					<a href="https://facebook.com" target="_blank" rel="noreferrer">
+						<img src="src/assets/facebook.svg" alt="Facebook" />
+					</a>
+					<a href="https://twitter.com" target="_blank" rel="noreferrer">
+						<img src="src/assets/twitter.svg" alt="Twitter" />
+					</a>
+				</div>
+			</footer>
 		</>
 	);
 }

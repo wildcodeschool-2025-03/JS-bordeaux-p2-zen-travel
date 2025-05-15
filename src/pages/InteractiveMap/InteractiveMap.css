@@ -1,5 +1,5 @@
 section.interactive-map {
-	height: 100vh;
+	height: 89vh;
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
@@ -10,9 +10,8 @@ section.interactive-map {
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
-	gap: 100px;
 	width: 100%;
-	height: 100%;
+	height: 80%;
 	position: relative;
 }
 
