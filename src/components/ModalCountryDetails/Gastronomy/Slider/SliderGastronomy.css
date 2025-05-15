@@ -1,0 +1,83 @@
+.dishes {
+	display: flex;
+	justify-content: space-around;
+	background: linear-gradient(to bottom, rgb(66, 140, 149, 0.7), white);
+	margin-top: 0px;
+	gap: 10px;
+}
+
+.dish-card-slider {
+	height: 320px;
+	border: 1px solid var(--main-color-modal);
+	border-radius: 20px;
+	box-shadow: 5px 0px 5px var(--main-color-modal);
+}
+
+.carousel-dishes.carousel-slider {
+	position: relative;
+	width: 90%;
+}
+
+.carousel-dishes {
+	width: 90%;
+	margin: auto;
+}
+
+.slider-wrapper.axis-horizontal {
+	width: 80%;
+}
+
+article h2 {
+	font-family: var(--font-family-modal);
+	color: var(--color-text-modal);
+}
+
+article p {
+	font-family: var(--font-family-modal);
+	color: var(--color-text-modal);
+	width: 180px;
+	margin: auto;
+	padding-bottom: 20px;
+}
+
+.carousel #dish-undefined {
+	width: 180px;
+	height: 120px;
+}
+
+.carousel-status {
+	display: none;
+}
+
+.carousel .thumbs-wrapper {
+	display: none;
+}
+
+.carousel .control-dots .dot {
+	display: none;
+}
+
+@media screen and (max-width: 768px) {
+	.carousel {
+		display: block;
+		width: 100%;
+	}
+
+	.dishes {
+		width: 100%;
+		max-width: 500px;
+		margin-top: 30px;
+	}
+
+	article h1 {
+		width: 300px;
+	}
+
+	.dish-card-slider {
+		width: 100%;
+	}
+
+	.control-dots {
+		display: none;
+	}
+}

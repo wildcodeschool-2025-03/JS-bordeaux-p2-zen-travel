@@ -1,35 +1,54 @@
-ul {
-	display: flex;
+ul.placeList {
+	display: grid;
+
+	margin: auto;
+	grid-template-columns: repeat(3, 1fr);
 	padding: initial;
 }
 
-ul li {
+ul.placeList li.places-card {
 	list-style-type: none;
 	margin: 10px;
+
 	border-radius: 15px;
 	border: solid rgb(66, 140, 149);
 	box-shadow: 20px 20px 20px 0 rgb(66, 140, 149, 0.6);
 }
 
-ul img {
-	border-radius: 5px;
+ul.placeList .dishe-img {
+	border-radius: 20px;
+	width: 170px;
 }
 
-ul li:hover {
+.carousel {
+	display: none;
+	background: linear-gradient(to bottom, rgb(66, 140, 149, 0.7), white);
+	border-radius: 10px;
+	margin-top: 20px;
+}
+
+.place-title {
+	font-size: 1.3rem;
+}
+
+.place-description {
+	font-size: .8rem;
+	line-height: 1.6;
+}
+
+ul.placeList li.places-card:hover {
 	transform: scale(1.05);
 	transition: all 0.3s ease;
 	background: linear-gradient(to bottom, rgb(66, 140, 149), white);
 	border-radius: 15px;
 }
 
-@media screen and (width <= 600px) {
-	.placeList {
+@media screen and (max-width: 768px) {
+	ul.placeList {
 		display: none;
 	}
-}
 
-@media screen and (width >= 601px) {
 	.carousel {
-		display: none;
+		display: block;
 	}
 }

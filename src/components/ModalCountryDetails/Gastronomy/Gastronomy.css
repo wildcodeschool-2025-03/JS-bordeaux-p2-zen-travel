@@ -1,0 +1,55 @@
+.gastronomy-body {
+	background: linear-gradient(to bottom, rgb(66, 140, 149, 0.7), white);
+	margin: auto;
+	height: 320px;
+	width: 96%;
+	padding: 0px 5px 0px 5px;
+	animation: fadeInUp 0.4s ease-out;
+}
+
+.dishes {
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+	margin: 10px 0px 10px 0px;
+}
+
+.dish-card {
+	width: 210px;
+	height: 270px;
+	margin: auto;
+	border: 1px solid var(--main-color-modal);
+	border-radius: 20px;
+	box-shadow: 5px 5px 5px var(--main-color-modal);
+}
+
+.dishe-title {
+	font-size: 1.3rem;
+}
+
+.dishe-description {
+	font-size: .8rem;
+	line-height: 1.6;
+}
+
+.dishe-img {
+	width: 170px;
+	height: 100px;
+}
+
+@media screen and (max-width: 768px) {
+	.gastronomy-body {
+		width: 70%;
+		height: 380px;
+		border-radius: 20px;
+	}
+
+	article h1 {
+		font-size: 1.6rem;
+	}
+
+	.dishes,
+	.dish-card {
+		display: none;
+	}
+}

@@ -75,4 +75,9 @@
 	.renseignement {
 		flex-direction: column;
 	}
+
+	.buttonEnvoyer {
+		font-size: .8rem;
+		width: 50%;
+	}
 }

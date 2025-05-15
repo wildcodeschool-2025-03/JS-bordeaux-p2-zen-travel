@@ -1,13 +1,15 @@
 .modal-checklist {
 	width: 90%;
+	max-width: 700px;
 	background: #8ec7cd;
 	margin: auto;
 	border-radius: 10px;
 	padding: 20px;
 	border: solid rgb(66, 140, 149);
 	box-shadow: 20px 20px 20px 0 rgb(66, 140, 149, 0.6);
-	height: auto;
-	max-height: 80vh;
+	height: 77vh;
+	position: fixed;
+	z-index: 40000;
 }
 
 #close-btn {
@@ -93,6 +95,7 @@ article li {
 	padding: 10px 0px 10px 0px;
 	color: var(--color-text-modal);
 	font-weight: bold;
+	text-align: justify;
 }
 
 article label {
@@ -173,13 +176,14 @@ input[type="checkbox"]:focus {
 
 @media screen and (max-width: 768px) {
 	.modal-checklist {
-		width: 100%;
+		width: 94%;
 		box-shadow: none;
 		padding: 20px 5px 20px 5px;
 	}
 
 	article h1 {
 		font-size: 1.2rem;
+		text-align: justify;
 	}
 
 	input[type="checkbox"] {

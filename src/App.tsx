@@ -30,7 +30,7 @@ function App() {
 						<li>📞 +33 7 22 58 46 11</li>
 						<li>
 							<button
-								className="bouttonQuestion"
+								className="btn-question"
 								type="button"
 								onClick={toggleContactBox}
 							>
@@ -46,7 +46,29 @@ function App() {
 				<Outlet />
 			</main>
 
-			<footer>&copy; Copyright 2025 by ITM.</footer>
+			<footer className="footer">
+				<p className="text-footer">© 2025 Zen Travel. Tous droits réservés.</p>
+				<div className="footer-socials">
+					<a href="https://instagram.com" target="_blank" rel="noreferrer">
+						<img
+							src="src/assets/images/imageSocial/instagram.png"
+							alt="Instagram"
+						/>
+					</a>
+					<a href="https://facebook.com" target="_blank" rel="noreferrer">
+						<img
+							src="src/assets/images/imageSocial/facebook.png"
+							alt="Facebook"
+						/>
+					</a>
+					<a href="https://twitter.com" target="_blank" rel="noreferrer">
+						<img
+							src="src/assets/images/imageSocial/twitter.png"
+							alt="Twitter"
+						/>
+					</a>
+				</div>
+			</footer>
 		</>
 	);
 }
