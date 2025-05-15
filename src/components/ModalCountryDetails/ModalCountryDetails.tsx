@@ -68,7 +68,7 @@ function ModalCountryDetails({
 						<img
 							src={country.flags.png}
 							alt={`Drapeau de ${country.translations.fra.common}`}
-							className="flagCountries"
+							className="flag-countries"
 							width="150"
 						/>
 						<h3>{country.translations.fra.common}</h3>
@@ -84,7 +84,7 @@ function ModalCountryDetails({
 								<button
 									key={tab}
 									type="button"
-									className="btn-mobile"
+									className={`btn-mobile ${tab === "Lieux à visiter" ? "grid" : ""}`}
 									onClick={() => {
 										setActivTab(tab);
 										setShowContent(true);
@@ -132,6 +132,7 @@ function ModalCountryDetails({
 							].map((tab) => (
 								<button
 									key={tab}
+									className={tab === activTab ? "active-tab" : ""}
 									type="button"
 									onClick={() => setActivTab(tab)}
 								>

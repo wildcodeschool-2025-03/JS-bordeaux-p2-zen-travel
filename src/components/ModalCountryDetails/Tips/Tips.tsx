@@ -123,7 +123,7 @@ function Tips({ country }: { country: Country }) {
 								</li>
 								<li>
 									🚨 Les urgences:
-									<div className="emergency-row">
+									<div className="emergency">
 										<span>👮 {dataTips.emergency?.police}</span> |{" "}
 										<span>🚑 {dataTips.emergency?.ambulance}</span> |{" "}
 										<span>🚒 {dataTips.emergency?.pompiers}</span>

@@ -1,36 +1,76 @@
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
 .info {
-	background: linear-gradient(to bottom, rgb(66, 140, 149), white);
+	background: linear-gradient(to bottom, rgb(66, 140, 149), #ffffff);
 	margin: auto;
 	width: 90%;
-	max-width: 800px;
-	height: auto;
-	max-height: 80vh;
-	border-radius: 10px;
-	border: solid rgb(66, 140, 149);
-	box-shadow: 20px 20px 20px 0 rgb(66, 140, 149, 0.6);
+	max-width: 700px;
+	height: 77vh;
+	border-radius: 15px;
+	border: 2px solid rgb(66, 140, 149);
+	box-shadow: 0 15px 30px rgba(66, 140, 149, 0.4);
 	padding: 20px;
 	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	animation: fadeInUp 0.6s ease-out;
+	transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.info:hover {
+	transform: scale(1.01);
+	box-shadow: 0 20px 40px rgba(66, 140, 149, 0.5);
 }
 
 .flag-countries {
-	border-radius: 10px;
+	border-radius: 12px;
 	width: 150px;
+	transition: transform 0.3s ease;
+}
+
+.flag-countries:hover {
+	transform: scale(1.05);
 }
 
 .close-button {
 	position: absolute;
-	background-color: white;
+	top: 1rem;
+	right: 1rem;
+	display: flex;
+	align-items: center;
+	background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+	border-radius: 12px;
+	border: none;
+	color: #020202;
+	font-size: 1rem;
 	font-weight: bold;
-	right: 10px;
-	top: 10px;
+	cursor: pointer;
+	margin: 1rem auto;
+	padding: 0.75rem 1rem;
+	transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.close-button:hover {
+	background-color: #eee;
 }
 
 .navbar {
-	display: inline-block;
 	display: flex;
 	justify-content: space-evenly;
-	height: 40px;
+	align-items: center;
+	margin: 1rem 0;
 }
+
 section nav {
 	background-color: rgb(66, 140, 149);
 	padding: 10px;
@@ -44,12 +84,38 @@ nav button {
 	font-size: large;
 	font-weight: bold;
 	cursor: pointer;
-}
-nav button:hover {
-	transform: scale(1.05);
+	position: relative;
+	padding: 10px 20px;
 	transition: all 0.3s ease;
+	border-bottom: 2px solid transparent;
+}
+
+nav button::after {
+	content: "";
+	position: absolute;
+	width: 0%;
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background-color: white;
+	transition: width 0.3s;
+}
+
+nav button:hover::after {
+	width: 100%;
+}
+
+nav button:hover {
+	color: #000;
 	background: linear-gradient(to bottom, rgb(66, 140, 149), white);
-	border-radius: 15px;
+	border-radius: 12px;
+}
+
+nav button.active-tab {
+	color: #000;
+	border-bottom: 3px solid #000;
+	border-radius: 12px 12px 0 0;
+	font-weight: bolder;
 }
 
 .info h2,
@@ -57,64 +123,44 @@ p {
 	color: rgb(66, 140, 149);
 }
 
-/* .pack-your-bag {
-	background-color: rgb(66, 140, 149);
-	width: 70%;
-	height: 40px;
-	border-radius: 15px;
-	margin: auto;
-} */
+.modal-content {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	animation: fadeInUp 0.4s ease-out;
+}
+
+.pack-your-bag {
+	display: flex;
+	justify-content: center;
+	padding: 1rem 0 0 0;
+}
 
 .pack-your-bag button {
 	background: rgb(66, 140, 149);
-	width: 30%;
+	width: 60%;
 	border: none;
 	color: white;
 	font-size: large;
-	padding: 10px;
+	padding: 12px 20px;
 	cursor: pointer;
+	border-radius: 20px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .pack-your-bag button:hover {
 	background: linear-gradient(to bottom, rgb(66, 140, 149), white);
+	color: #000;
 	transform: scale(1.05);
-	transition: all 0.3s ease;
-	border-radius: 15px;
-	cursor: pointer;
-}
-
-.modal-content {
-	font-weight: bold;
-	flex-grow: 1;
-	overflow-y: auto;
-}
-
-.modal-header {
-	display: flex;
-	justify-content: flex-end;
-}
-
-.mobile-view + .tabs {
-	display: none;
-}
-
-.back-button-mobile {
-	display: none;
 }
 
 @media screen and (max-width: 768px) {
 	.info {
-		width: 85%;
-		height: 98vh;
-		padding: 0 15px;
-	}
-	.mobile-view .tabs {
-		display: none;
-	}
-
-	.choose-msg {
-		text-align: center;
-		padding: 1rem;
+		width: 90%;
+		padding: 10px;
+		margin: 0 auto;
+		border-radius: 12px;
 	}
 
 	.navbar {
@@ -125,28 +171,29 @@ p {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 20px;
-		padding: 20px;
-		background-color: #e7f8fa35;
-		border-radius: 12px;
+		padding: 30px;
+		width: 70%;
+		margin: auto;
+		background-color: rgba(231, 248, 250, 0.2);
+		border-radius: 8px;
 		box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
-		overflow: hidden;
 	}
 
 	.btn-mobile {
-		padding: 10px;
-		border-radius: 20px;
+		padding: 25px 15px;
+		border-radius: 10px;
 		color: #000;
 		background: linear-gradient(135deg, #69c9d0, #1112125c);
-		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.719);
+		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.7);
 		font-weight: bold;
 		font-size: 1rem;
 		cursor: pointer;
 		border: none;
-		transition: transform 0.2s ease, box-shadow 0.2s ease;
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
 	}
 
 	.btn-mobile:hover {
-		transform: translateY(-2px);
+		transform: translateY(-2px) scale(1.05);
 		box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 	}
 
@@ -154,30 +201,20 @@ p {
 		grid-column: span 2;
 	}
 
-	.choose-msg h3 {
-		margin-top: 1rem;
-		color: #428c95;
-	}
-
-	.choose-tab {
-		margin: 1rem 0;
-		color: #333;
-		font-weight: bold;
-	}
-
 	.back-button-mobile {
+		position: absolute;
+		top: 1rem;
+		left: 1rem;
 		display: flex;
 		align-items: center;
-		gap: 0.5rem;
 		background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
 		border-radius: 12px;
 		border: none;
 		color: #020202;
 		font-size: 1rem;
 		font-weight: bold;
-		font-size: 1.5rem;
 		cursor: pointer;
-		margin: 1rem;
+		margin: 1rem auto;
 		padding: 0.75rem 1rem;
 		transition: background 0.3s ease, transform 0.2s ease;
 	}
@@ -186,10 +223,5 @@ p {
 		background: linear-gradient(135deg, #b2ebf2, #69c9d0);
 		transform: scale(1.02);
 		box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-	}
-
-	.weather {
-		font-size: 2rem;
-		margin-right: 10px;
 	}
 }

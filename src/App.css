@@ -2,7 +2,6 @@
 
 html,
 body {
-	height: 100vh;
 	margin: 0;
 	font-family: var(--font-family-modal);
 	overflow: hidden;
@@ -28,15 +27,48 @@ ul {
 }
 
 header {
-	height: 7vh;
+	height: 8vh;
 }
 
 main {
-	height: 80vh;
+	min-height: calc(100vh - 25vh);
+	flex: 1;
 }
 
 footer {
-	height: 7vh;
+	min-height: 9vh;
+	padding: 1rem;
+	text-align: center;
+	color: white;
+}
+
+.footer {
+	background-color: #1e1e1e;
+	color: #ffffffcc;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.8rem;
+}
+
+.text-footer {
+	margin: 6px;
+}
+
+.footer-socials {
+	display: flex;
+	gap: 1.2rem;
+}
+
+.footer-socials img {
+	width: 24px;
+	height: 24px;
+	transition: transform 0.2s ease;
+}
+
+.footer-socials img:hover {
+	transform: scale(1.1);
 }
 
 header .header-navbar {
@@ -85,8 +117,16 @@ header .header-navbar ul li {
 }
 
 @media (max-width: 768px) {
+	html,
+	body {
+		overflow: auto;
+	}
 	header .header-navbar {
 		margin-left: 0;
+	}
+
+	header .header-navbar ul li {
+		font-size: .6rem;
 	}
 
 	header .header-navbar ul {
@@ -113,11 +153,15 @@ header .header-navbar ul li {
 		align-items: flex-start;
 		width: 30%;
 		border-radius: 20px;
-		padding: 20px;
+		padding: 15px;
 		gap: 16px;
 		overflow: hidden;
 		display: flex;
 		color: #000;
+	}
+
+	.btn-question {
+		font-size: .6rem;
 	}
 
 	.menu.open {
@@ -131,7 +175,7 @@ header .header-navbar ul li {
 	}
 }
 
-.bouttonQuestion {
+.btn-question {
 	color: black;
 	cursor: pointer;
 }
