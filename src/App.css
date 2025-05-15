@@ -1,5 +1,187 @@
+@import "./assets/css/_variables.css";
+
+html,
 body {
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+	margin: 0;
+	font-family: var(--font-family-modal);
+	overflow: hidden;
+}
+
+body {
+	text-align: center;
+	background: linear-gradient(
+		to bottom,
+		#4facfe85,
+		#00f1fe16,
+		#43e97a4d,
+		#d2f93848
+	);
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+}
+
+header {
+	height: 8vh;
+}
+
+main {
+	min-height: calc(100vh - 25vh);
+	flex: 1;
+}
+
+footer {
+	min-height: 9vh;
+	padding: 1rem;
+	text-align: center;
+	color: white;
+}
+
+.footer {
+	background-color: #1e1e1e;
+	color: #ffffffcc;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.8rem;
+}
+
+.text-footer {
+	margin: 6px;
+}
+
+.footer-socials {
+	display: flex;
+	gap: 1.2rem;
+}
+
+.footer-socials img {
+	width: 24px;
+	height: 24px;
+	transition: transform 0.2s ease;
+}
+
+.footer-socials img:hover {
+	transform: scale(1.1);
+}
+
+header .header-navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 30px;
+}
+
+header .header-navbar .logo img {
+	width: 60%;
+	height: 70%;
+	filter: brightness(0.6);
+	background-color: transparent;
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+header .header-navbar .logo {
+	z-index: 20;
+}
+
+header .header-navbar ul {
+	display: flex;
+	gap: 50px;
+	font-size: 1.1rem;
+	font-family: var(--font-family-modal);
+}
+
+header .header-navbar ul li {
+	cursor: pointer;
+}
+
+.burger-icon {
+	display: none;
+	background: rgba(108, 67, 13, 0.883);
+	color: #f2c94c;
+	padding: 0.6rem;
+	font-size: 1.5rem;
+	border-radius: 12px;
+	border: 1px solid rgba(156, 162, 46, 0.823);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	cursor: pointer;
+	transition: all 0.3s ease;
+	z-index: 20;
+}
+
+@media (max-width: 768px) {
+	html,
+	body {
+		overflow: auto;
+	}
+	header .header-navbar {
+		margin-left: 0;
+	}
+
+	header .header-navbar ul li {
+		font-size: .6rem;
+	}
+
+	header .header-navbar ul {
+		display: none;
+	}
+
+	.burger-icon {
+		display: block;
+	}
+
+	.burger-icon:hover {
+		background: rgba(242, 201, 76, 0.15);
+		color: #674600;
+		transform: scale(1.02);
+		box-shadow: 0 6px 18px rgba(242, 201, 76, 0.4);
+	}
+
+	.menu {
+		position: absolute;
+		top: 0;
+		right: 25%;
+		background-color: #1e293b56;
+		flex-direction: column;
+		align-items: flex-start;
+		width: 30%;
+		border-radius: 20px;
+		padding: 15px;
+		gap: 16px;
+		overflow: hidden;
+		display: flex;
+		color: #000;
+	}
+
+	.btn-question {
+		font-size: .6rem;
+	}
+
+	.menu.open {
+		display: block;
+		max-height: 200px;
+		font-size: .9rem;
+	}
+
+	.header-navbar ul {
+		flex-direction: column;
+	}
+}
+
+.btn-question {
+	color: black;
+	cursor: pointer;
+}
+
+.menu {
+	display: flex;
+	align-items: baseline;
+	margin-bottom: auto;
 }

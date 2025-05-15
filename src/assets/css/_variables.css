@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Special+Elite&display=swap");
+
+:root {
+	--main-color-modal: #4698a1;
+	--secondary-color-modal: #fff;
+	--color-text-modal: #2c7a83;
+	--color-btn-modal: #fff;
+
+	--font-family-title-home: "special Elite";
+	--font-family-modal: "Inter";
+
+	--font-size-title-home: 2rem;
+	--font-size-navbar-modal: 1.8rem;
+	--font-size-btn-title-modal: 2rem;
+	--font-size-paragraphe-modal: 1.2rem;
+}
