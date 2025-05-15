@@ -155,7 +155,7 @@ function ModalCountryDetails({
 							</div>
 						)}
 
-						{activTab === "Gastronomie" && <Gastronomy />}
+						{activTab === "Gastronomie" && <Gastronomy country={country} />}
 						{activTab === "Climat" && <Climat country={country} />}
 						{activTab === "Tips" && <Tips country={country} />}
 						{activTab === "Lieux à visiter" && <Places country={country} />}
